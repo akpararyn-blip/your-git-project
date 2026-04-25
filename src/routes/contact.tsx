@@ -20,15 +20,15 @@ export const Route = createFileRoute("/contact")({
   component: ContactPage,
 });
 
-const channels = [
-  { label: "Email", value: "hello@pulse.agency", href: "mailto:hello@pulse.agency" },
-  { label: "Телефон", value: "+7 495 000 00 00", href: "tel:+74950000000" },
-  { label: "Telegram", value: "@pulse_agency", href: "https://t.me/pulse_agency" },
-];
-
-const budgets = ["до 300 000 ₽", "300 000 — 1 млн ₽", "1—3 млн ₽", "более 3 млн ₽"];
-
 function ContactPage() {
+  const channels = [
+    { label: "Email", value: "hello@pulse.agency", href: "mailto:hello@pulse.agency" },
+    { label: "Телефон", value: "+7 495 000 00 00", href: "tel:+74950000000" },
+    { label: "Telegram", value: "@pulse_agency", href: "https://t.me/pulse_agency" },
+  ];
+
+  const budgets = ["до 300 000 ₽", "300 000 — 1 млн ₽", "1—3 млн ₽", "более 3 млн ₽"];
+
   const [submitted, setSubmitted] = useState(false);
   const [budget, setBudget] = useState<string | null>(null);
 
