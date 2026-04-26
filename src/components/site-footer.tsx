@@ -1,4 +1,5 @@
 import { Link } from "@tanstack/react-router";
+import logo from "@/assets/aryn-logo.png";
 
 export function SiteFooter() {
   return (
@@ -6,15 +7,8 @@ export function SiteFooter() {
       <div className="mx-auto max-w-7xl px-6 py-16 lg:px-10">
         <div className="grid grid-cols-2 gap-10 md:grid-cols-4">
           <div className="col-span-2">
-            <Link to="/" className="flex items-center gap-2">
-              <span className="flex items-center gap-0.5">
-                <span className="h-2 w-2 rounded-full bg-[oklch(0.55_0.22_255)]" />
-                <span className="h-2 w-2 rounded-full bg-foreground" />
-                <span className="h-2 w-2 rounded-full bg-[oklch(0.85_0.18_85)]" />
-              </span>
-              <span className="font-display text-2xl font-medium uppercase tracking-[0.2em]">
-                ARYN<span className="ml-1 text-muted-foreground">TEAM</span>
-              </span>
+            <Link to="/" className="flex items-center" aria-label="ARYN TEAM — на главную">
+              <img src={logo} alt="ARYN TEAM" className="h-10 w-auto" loading="lazy" />
             </Link>
             <p className="mt-4 max-w-sm text-sm text-muted-foreground">
               Снимаем оригинальный контент, который смотрится дорого. Performance-маркетинг
