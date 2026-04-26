@@ -33,13 +33,13 @@ export const Route = createRootRoute({
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Pulse — Performance-маркетинг с прозрачной аналитикой" },
+      { title: "ARYN TEAM — Видеопродакшен и performance-маркетинг" },
       {
         name: "description",
         content:
-          "Performance-агентство Pulse: контекстная и таргетированная реклама, SEO, аналитика. Растим выручку клиентов с прозрачным ROI.",
+          "ARYN TEAM — агентство видеопродакшена и performance-маркетинга в Алматы. Оригинальный контент, прозрачная аналитика, измеримый рост.",
       },
-      { name: "author", content: "Pulse Agency" },
+      { name: "author", content: "ARYN TEAM" },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
     ],
