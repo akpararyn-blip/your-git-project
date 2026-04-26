@@ -1,16 +1,17 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useState, type FormEvent } from "react";
+import { formatKzPhone, isValidKzPhone } from "@/lib/phone-mask";
 
 export const Route = createFileRoute("/contact")({
   head: () => ({
     meta: [
-      { title: "Контакты — Pulse Performance Marketing" },
+      { title: "Контакты — ARYN TEAM · Алматы" },
       {
         name: "description",
         content:
-          "Свяжитесь с Pulse: бесплатный аудит ваших рекламных кампаний за 30 минут. Москва, удалённо по всему миру.",
+          "Свяжитесь с ARYN TEAM: бесплатный аудит рекламы за 30 минут. Алматы, +7 707 484 2108, Telegram @arynbg.",
       },
-      { property: "og:title", content: "Контакты — Pulse Performance Marketing" },
+      { property: "og:title", content: "Контакты — ARYN TEAM · Алматы" },
       {
         property: "og:description",
         content: "Запросите бесплатный аудит ваших рекламных кампаний.",
@@ -22,18 +23,34 @@ export const Route = createFileRoute("/contact")({
 
 function ContactPage() {
   const channels = [
-    { label: "Email", value: "hello@pulse.agency", href: "mailto:hello@pulse.agency" },
-    { label: "Телефон", value: "+7 495 000 00 00", href: "tel:+74950000000" },
-    { label: "Telegram", value: "@pulse_agency", href: "https://t.me/pulse_agency" },
+    { label: "Телефон", value: "+7 707 484 2108", href: "tel:+77074842108" },
+    { label: "Telegram", value: "@arynbg", href: "https://t.me/arynbg" },
   ];
 
-  const budgets = ["до 300 000 ₽", "300 000 — 1 млн ₽", "1—3 млн ₽", "более 3 млн ₽"];
+  const budgets = [
+    "до 500 000 тг",
+    "500 000 — 2 млн тг",
+    "2—5 млн тг",
+    "более 5 млн тг",
+  ];
 
   const [submitted, setSubmitted] = useState(false);
   const [budget, setBudget] = useState<string | null>(null);
+  const [name, setName] = useState("");
+  const [phone, setPhone] = useState("+7 (");
+  const [phoneError, setPhoneError] = useState<string | null>(null);
+
+  function handlePhoneChange(e: React.ChangeEvent<HTMLInputElement>) {
+    setPhone(formatKzPhone(e.target.value));
+    if (phoneError) setPhoneError(null);
+  }
 
   function handleSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
+    if (!isValidKzPhone(phone)) {
+      setPhoneError("Введите казахстанский номер: +7 (___) ___-__-__");
+      return;
+    }
     setSubmitted(true);
   }
 
@@ -78,6 +95,8 @@ function ContactPage() {
                     onClick={() => {
                       setSubmitted(false);
                       setBudget(null);
+                      setName("");
+                      setPhone("+7 (");
                     }}
                     className="mt-8 text-sm font-medium underline-offset-4 hover:underline"
                   >
@@ -87,16 +106,77 @@ function ContactPage() {
               ) : (
                 <form onSubmit={handleSubmit} className="space-y-8">
                   <div className="grid gap-6 md:grid-cols-2">
-                    <Field label="Имя" name="name" placeholder="Алексей Иванов" required />
-                    <Field label="Компания" name="company" placeholder="ACME Inc." />
-                    <Field
-                      label="Email"
-                      name="email"
-                      type="email"
-                      placeholder="you@company.com"
-                      required
-                    />
-                    <Field label="Телефон" name="phone" type="tel" placeholder="+7 999 000 00 00" />
+                    <div>
+                      <label
+                        htmlFor="name"
+                        className="mb-3 block text-xs font-mono uppercase tracking-widest text-muted-foreground"
+                      >
+                        Имя <span className="text-foreground">*</span>
+                      </label>
+                      <input
+                        id="name"
+                        name="name"
+                        required
+                        value={name}
+                        onChange={(e) => setName(e.target.value)}
+                        placeholder="Введите ваше имя"
+                        className="w-full rounded-xl border border-hairline bg-background px-4 py-3 text-base text-foreground placeholder:text-muted-foreground/60 focus:border-foreground focus:outline-none"
+                      />
+                    </div>
+
+                    <div>
+                      <label
+                        htmlFor="company"
+                        className="mb-3 block text-xs font-mono uppercase tracking-widest text-muted-foreground"
+                      >
+                        Компания
+                      </label>
+                      <input
+                        id="company"
+                        name="company"
+                        placeholder="ACME Inc."
+                        className="w-full rounded-xl border border-hairline bg-background px-4 py-3 text-base text-foreground placeholder:text-muted-foreground/60 focus:border-foreground focus:outline-none"
+                      />
+                    </div>
+
+                    <div>
+                      <label
+                        htmlFor="email"
+                        className="mb-3 block text-xs font-mono uppercase tracking-widest text-muted-foreground"
+                      >
+                        Email
+                      </label>
+                      <input
+                        id="email"
+                        name="email"
+                        type="email"
+                        placeholder="you@company.com"
+                        className="w-full rounded-xl border border-hairline bg-background px-4 py-3 text-base text-foreground placeholder:text-muted-foreground/60 focus:border-foreground focus:outline-none"
+                      />
+                    </div>
+
+                    <div>
+                      <label
+                        htmlFor="phone"
+                        className="mb-3 block text-xs font-mono uppercase tracking-widest text-muted-foreground"
+                      >
+                        Телефон <span className="text-foreground">*</span>
+                      </label>
+                      <input
+                        id="phone"
+                        name="phone"
+                        type="tel"
+                        required
+                        inputMode="tel"
+                        value={phone}
+                        onChange={handlePhoneChange}
+                        placeholder="+7 777 000 0000"
+                        className="w-full rounded-xl border border-hairline bg-background px-4 py-3 text-base text-foreground placeholder:text-muted-foreground/60 focus:border-foreground focus:outline-none"
+                      />
+                      {phoneError && (
+                        <p className="mt-2 text-xs text-destructive">{phoneError}</p>
+                      )}
+                    </div>
                   </div>
 
                   <div>
@@ -165,6 +245,8 @@ function ContactPage() {
                     <li key={c.label} className="bg-background">
                       <a
                         href={c.href}
+                        target={c.href.startsWith("http") ? "_blank" : undefined}
+                        rel={c.href.startsWith("http") ? "noopener noreferrer" : undefined}
                         className="group flex items-center justify-between p-6 transition-colors hover:bg-secondary"
                       >
                         <div>
@@ -189,10 +271,9 @@ function ContactPage() {
                   / Где мы
                 </p>
                 <div className="mt-6 rounded-2xl border border-hairline p-6">
-                  <div className="font-display text-xl font-medium tracking-tight">Москва</div>
+                  <div className="font-display text-xl font-medium tracking-tight">Алматы</div>
                   <p className="mt-2 text-sm text-muted-foreground">
-                    Большая Никитская, 14<br />
-                    Пн—Пт, 10:00—19:00 МСК
+                    Работаем по всему Казахстану и удалённо
                   </p>
                 </div>
               </div>
@@ -207,39 +288,5 @@ function ContactPage() {
         </div>
       </section>
     </>
-  );
-}
-
-function Field({
-  label,
-  name,
-  type = "text",
-  placeholder,
-  required,
-}: {
-  label: string;
-  name: string;
-  type?: string;
-  placeholder?: string;
-  required?: boolean;
-}) {
-  return (
-    <div>
-      <label
-        htmlFor={name}
-        className="mb-3 block text-xs font-mono uppercase tracking-widest text-muted-foreground"
-      >
-        {label}
-        {required && <span className="text-foreground"> *</span>}
-      </label>
-      <input
-        id={name}
-        name={name}
-        type={type}
-        required={required}
-        placeholder={placeholder}
-        className="w-full rounded-xl border border-hairline bg-background px-4 py-3 text-base text-foreground placeholder:text-muted-foreground/60 focus:border-foreground focus:outline-none"
-      />
-    </div>
   );
 }

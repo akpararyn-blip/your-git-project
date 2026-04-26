@@ -1,19 +1,23 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
+import { ContactDialog } from "@/components/contact-dialog";
 
 export const Route = createFileRoute("/services")({
   head: () => ({
     meta: [
-      { title: "Услуги — Pulse Performance Marketing" },
+      { title: "Услуги — ARYN TEAM · Видеопродакшен и реклама" },
       {
         name: "description",
         content:
-          "Контекстная и таргетированная реклама, SEO, веб-аналитика, креативы и посадочные страницы. Полный цикл performance-маркетинга.",
+          "Видеопродакшен (рекламные ролики, имиджевые видео, съёмка мероприятий) и performance-маркетинг: контекст, таргет, аналитика. Цены в тенге.",
       },
-      { property: "og:title", content: "Услуги — Pulse Performance Marketing" },
+      {
+        property: "og:title",
+        content: "Услуги — ARYN TEAM · Видеопродакшен и реклама",
+      },
       {
         property: "og:description",
         content:
-          "Performance-маркетинг полного цикла: реклама, аналитика, креатив и посадочные.",
+          "Рекламные и имиджевые видеоролики от 30 000 тг. Performance-маркетинг от 150 000 тг/мес.",
       },
     ],
   }),
@@ -25,13 +29,13 @@ function ServicesPage() {
     {
       no: "01",
       title: "Контекстная реклама",
-      summary: "Yandex Direct, Google Ads. Поисковые, РСЯ, ремаркетинг.",
+      summary: "Google Ads и Yandex Direct. Поиск, КМС, ремаркетинг.",
       points: ["Семантическое ядро", "A/B креативов", "Управление ставками", "Минус-фразы и чистка"],
     },
     {
       no: "02",
       title: "Таргетированная реклама",
-      summary: "VK Ads, Telegram Ads, MyTarget — точное попадание в ЦА.",
+      summary: "Instagram, TikTok, VK Ads — точное попадание в ЦА.",
       points: ["Сегментация аудиторий", "Look-alike модели", "Видео и статика", "Ретаргетинг"],
     },
     {
@@ -44,7 +48,7 @@ function ServicesPage() {
       no: "04",
       title: "Сквозная аналитика",
       summary: "Настройка трекинга, дашборды и атрибуция по всей воронке.",
-      points: ["GA4, Yandex Metrica", "Server-side трекинг", "Roistat / собственные дашборды", "Когортный анализ"],
+      points: ["GA4, Yandex Metrica", "Server-side трекинг", "Дашборды Looker Studio", "Когортный анализ"],
     },
     {
       no: "05",
@@ -60,10 +64,53 @@ function ServicesPage() {
     },
   ];
 
+  const videos = [
+    {
+      no: "V1",
+      title: "Вертикальные рекламные ролики",
+      desc: "Для Instagram Reels/Stories, TikTok, YouTube Shorts. Короткие, динамичные видео. Доп. формат 1:1.",
+      meta: "9:16 · 10–60 сек",
+      price: "30 000 тг",
+      unit: "за ролик",
+    },
+    {
+      no: "V2",
+      title: "Горизонтальные рекламные ролики",
+      desc: "Для YouTube, сайтов, презентаций. Полное раскрытие идеи бренда и продукта.",
+      meta: "16:9 · 15–180 сек",
+      price: "30 000 тг",
+      unit: "за ролик",
+    },
+    {
+      no: "V3",
+      title: "Имиджевые (корпоративные)",
+      desc: "Для презентаций и выставок. Фокус на бренде, ценностях и команде.",
+      meta: "16:9 · 30–180 сек",
+      price: "50 000 тг",
+      unit: "за ролик",
+    },
+    {
+      no: "V4",
+      title: "Тренинги и обучающие",
+      desc: "Для обучения сотрудников или сервисной поддержки клиентов.",
+      meta: "16:9 · 30–180 сек",
+      price: "50 000 тг",
+      unit: "за ролик",
+    },
+    {
+      no: "V5",
+      title: "Съёмка на мероприятии",
+      desc: "Офлайн-съёмка видеоотчётов. Также услуги фотографа на площадке.",
+      meta: "16:9 · видеоотчёт",
+      price: "50 000 тг",
+      unit: "за час",
+    },
+  ];
+
   const tiers = [
     {
       name: "Старт",
-      price: "от 120 000 ₽",
+      price: "от 150 000 тг",
       period: "в месяц",
       desc: "Для бизнеса, который только запускает performance-каналы.",
       features: ["1—2 рекламных канала", "Базовая аналитика", "Еженедельный отчёт", "Менеджер проекта"],
@@ -71,7 +118,7 @@ function ServicesPage() {
     },
     {
       name: "Рост",
-      price: "от 280 000 ₽",
+      price: "от 300 000 тг",
       period: "в месяц",
       desc: "Полноценная команда performance-маркетинга на вашей стороне.",
       features: ["До 5 каналов", "Сквозная аналитика", "Креативы и посадочные", "Стратег + аналитик + байер"],
@@ -81,7 +128,7 @@ function ServicesPage() {
       name: "Скейл",
       price: "по запросу",
       period: "",
-      desc: "Для крупных рекламодателей с бюджетом от 3 млн ₽ в месяц.",
+      desc: "Для крупных рекламодателей с бюджетом от 5 млн тг в месяц.",
       features: ["Выделенная команда", "Server-side трекинг", "ML-оптимизация ставок", "SLA и приоритет"],
       accent: false,
     },
@@ -96,19 +143,101 @@ function ServicesPage() {
             / Услуги
           </p>
           <h1 className="mt-6 max-w-4xl font-display text-5xl font-medium leading-[1] tracking-tight text-balance md:text-7xl lg:text-8xl">
-            Шесть направлений. <em className="not-italic">Один</em> измеримый результат.
+            Видео и реклама. <em className="not-italic">Один</em> измеримый результат.
           </h1>
           <p className="mt-8 max-w-2xl text-lg text-muted-foreground md:text-xl">
-            Мы не продаём «услуги ради услуг». Подбираем только те каналы и инструменты, которые
+            Мы не продаём «услуги ради услуг». Подбираем только те форматы и каналы, которые
             окупятся в рамках вашей юнит-экономики.
           </p>
+        </div>
+      </section>
+
+      {/* AUDIT CTA */}
+      <section className="border-b border-hairline bg-secondary/40">
+        <div className="mx-auto flex max-w-7xl flex-col items-start justify-between gap-6 px-6 py-12 md:flex-row md:items-center lg:px-10">
+          <div>
+            <p className="text-xs font-mono uppercase tracking-widest text-muted-foreground">
+              / Бесплатно
+            </p>
+            <h2 className="mt-3 font-display text-2xl font-medium leading-tight tracking-tight md:text-3xl">
+              Аудит вашей текущей рекламы за 30 минут
+            </h2>
+          </div>
+          <ContactDialog
+            title="Аудит рекламы"
+            description="Оставьте контакты — свяжемся и согласуем удобное время."
+            trigger={
+              <button
+                type="button"
+                className="group inline-flex items-center gap-2 rounded-full bg-foreground px-6 py-3.5 text-sm font-medium text-background transition-all hover:gap-3"
+              >
+                Запросить аудит
+                <span aria-hidden className="transition-transform group-hover:translate-x-1">→</span>
+              </button>
+            }
+          />
+        </div>
+      </section>
+
+      {/* VIDEO PRODUCTION */}
+      <section className="border-b border-hairline">
+        <div className="mx-auto max-w-7xl px-6 py-24 lg:px-10 lg:py-32">
+          <div className="flex flex-col items-start justify-between gap-6 md:flex-row md:items-end">
+            <div>
+              <p className="text-xs font-mono uppercase tracking-widest text-muted-foreground">
+                / Видеопродакшен
+              </p>
+              <h2 className="mt-6 font-display text-4xl font-medium leading-tight tracking-tight md:text-5xl">
+                Снимаем то, что хочется <em className="not-italic">досмотреть</em>.
+              </h2>
+            </div>
+            <p className="max-w-md text-muted-foreground">
+              Сценарий, съёмка, монтаж и цветокоррекция — под ключ. Цены указаны за готовый ролик
+              без срытых доплат.
+            </p>
+          </div>
+
+          <div className="mt-16 grid gap-px overflow-hidden rounded-3xl border border-hairline bg-hairline md:grid-cols-2 lg:grid-cols-3">
+            {videos.map((v) => (
+              <article
+                key={v.no}
+                className="group relative flex flex-col bg-background p-8 transition-colors hover:bg-secondary md:p-10"
+              >
+                <div className="flex items-center justify-between">
+                  <span className="font-mono text-xs text-muted-foreground">{v.no}</span>
+                  <span className="rounded-full bg-secondary px-2.5 py-1 text-[10px] font-mono uppercase tracking-widest text-muted-foreground">
+                    {v.meta}
+                  </span>
+                </div>
+                <h3 className="mt-10 font-display text-2xl font-medium leading-tight tracking-tight">
+                  {v.title}
+                </h3>
+                <p className="mt-3 text-muted-foreground">{v.desc}</p>
+                <div className="mt-auto pt-8">
+                  <div className="flex items-baseline gap-2 border-t border-hairline pt-5">
+                    <span className="font-display text-3xl font-medium tracking-tight">
+                      {v.price}
+                    </span>
+                    <span className="text-sm text-muted-foreground">/ {v.unit}</span>
+                  </div>
+                </div>
+              </article>
+            ))}
+          </div>
         </div>
       </section>
 
       {/* SERVICES GRID */}
       <section className="border-b border-hairline">
         <div className="mx-auto max-w-7xl px-6 py-24 lg:px-10">
-          <div className="grid gap-px overflow-hidden rounded-3xl border border-hairline bg-hairline md:grid-cols-2 lg:grid-cols-3">
+          <p className="text-xs font-mono uppercase tracking-widest text-muted-foreground">
+            / Маркетинг
+          </p>
+          <h2 className="mt-6 max-w-3xl font-display text-4xl font-medium leading-tight tracking-tight md:text-5xl">
+            Шесть направлений performance-маркетинга.
+          </h2>
+
+          <div className="mt-16 grid gap-px overflow-hidden rounded-3xl border border-hairline bg-hairline md:grid-cols-2 lg:grid-cols-3">
             {services.map((s) => (
               <article
                 key={s.no}
@@ -142,7 +271,7 @@ function ServicesPage() {
           <div className="flex flex-col items-start justify-between gap-6 md:flex-row md:items-end">
             <div>
               <p className="text-xs font-mono uppercase tracking-widest text-muted-foreground">
-                / Форматы сотрудничества
+                / Тарифы
               </p>
               <h2 className="mt-6 font-display text-4xl font-medium leading-tight tracking-tight md:text-5xl">
                 Прозрачно, как и должно быть.
@@ -229,13 +358,19 @@ function ServicesPage() {
             <h2 className="max-w-2xl font-display text-4xl font-medium leading-tight tracking-tight md:text-5xl">
               Не уверены, какой формат подойдёт?
             </h2>
-            <Link
-              to="/contact"
-              className="group inline-flex items-center gap-2 rounded-full bg-foreground px-6 py-3.5 text-sm font-medium text-background transition-all hover:gap-3"
-            >
-              Расскажите о проекте
-              <span aria-hidden className="transition-transform group-hover:translate-x-1">→</span>
-            </Link>
+            <ContactDialog
+              title="Расскажите о проекте"
+              description="Оставьте контакты — обсудим задачу и подберём формат."
+              trigger={
+                <button
+                  type="button"
+                  className="group inline-flex items-center gap-2 rounded-full bg-foreground px-6 py-3.5 text-sm font-medium text-background transition-all hover:gap-3"
+                >
+                  Расскажите о проекте
+                  <span aria-hidden className="transition-transform group-hover:translate-x-1">→</span>
+                </button>
+              }
+            />
           </div>
         </div>
       </section>
