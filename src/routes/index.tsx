@@ -1,19 +1,23 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
+import { ContactDialog } from "@/components/contact-dialog";
 
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Pulse — Performance-маркетинг, который окупается" },
+      { title: "ARYN TEAM — Видеопродакшен и performance-маркетинг" },
       {
         name: "description",
         content:
-          "Pulse — performance-агентство полного цикла: контекстная и таргетированная реклама, SEO, аналитика. Прозрачные KPI и измеримый рост выручки.",
+          "ARYN TEAM — снимаем оригинальный видеоконтент, который смотрится дорого. Рекламные ролики, имиджевые видео и performance-маркетинг полного цикла в Алматы.",
       },
-      { property: "og:title", content: "Pulse — Performance-маркетинг, который окупается" },
+      {
+        property: "og:title",
+        content: "ARYN TEAM — Видеопродакшен и performance-маркетинг",
+      },
       {
         property: "og:description",
         content:
-          "Превращаем рекламные бюджеты в предсказуемую выручку. Аналитика, медиабаинг, креатив.",
+          "Оригинальный контент вместо дешевого ИИ. Видеоролики, реклама, аналитика — под ключ.",
       },
     ],
   }),
@@ -28,7 +32,16 @@ function HomePage() {
     { value: "94%", label: "Клиентов с нами 2+ года" },
   ];
 
-  const logos = ["Northwave", "Lumen", "Acme Co.", "Verra", "Forma", "Helio", "Mercato", "Solid"];
+  const partners = [
+    "Партнёр 01",
+    "Партнёр 02",
+    "Партнёр 03",
+    "Партнёр 04",
+    "Партнёр 05",
+    "Партнёр 06",
+    "Партнёр 07",
+    "Партнёр 08",
+  ];
 
   const principles = [
     {
@@ -47,14 +60,14 @@ function HomePage() {
       no: "03",
       title: "Команда, а не подрядчик",
       body:
-        "Стратег, медиабайер, аналитик и дизайнер закреплены за вашим проектом. Без перекидывания задач.",
+        "Стратег, медиабайер, аналитик и видеограф закреплены за вашим проектом. Без перекидывания задач.",
     },
   ];
 
   const process = [
     { step: "01", title: "Аудит", desc: "Разбираем текущие кампании, аналитику и юнит-экономику." },
     { step: "02", title: "Стратегия", desc: "Карта каналов, прогноз ROAS, медиаплан на 3 месяца." },
-    { step: "03", title: "Запуск", desc: "Креативы, посадочные, настройка трекинга и атрибуции." },
+    { step: "03", title: "Запуск", desc: "Креативы, видео, посадочные, настройка трекинга." },
     { step: "04", title: "Рост", desc: "Еженедельные итерации. Масштабируем то, что работает." },
   ];
 
@@ -62,35 +75,69 @@ function HomePage() {
     <>
       {/* HERO */}
       <section className="relative overflow-hidden border-b border-hairline">
-        <div className="mx-auto max-w-7xl px-6 pb-24 pt-20 lg:px-10 lg:pt-28">
+        <div className="mx-auto max-w-7xl px-6 pb-20 pt-16 lg:px-10 lg:pt-24">
           <div className="flex items-center gap-3 text-xs font-mono uppercase tracking-widest text-muted-foreground">
             <span className="h-px w-8 bg-foreground/40" />
-            Performance Marketing Studio · 2018—2025
+            ARYN TEAM · Almaty · Video & Performance
           </div>
 
-          <h1 className="mt-8 max-w-5xl font-display text-5xl font-medium leading-[0.95] tracking-tight text-balance md:text-7xl lg:text-[7.5rem]">
-            Реклама, которую можно <em className="not-italic">измерить</em> до копейки.
-          </h1>
+          <div className="mt-10 grid items-center gap-12 lg:grid-cols-[1.2fr_1fr] lg:gap-16">
+            {/* Left: heading + actions */}
+            <div>
+              <h1 className="font-display text-4xl font-medium leading-[1.02] tracking-tight text-balance md:text-6xl lg:text-[5rem]">
+                Снимаем оригинальный контент, который смотрится{" "}
+                <em className="not-italic">дорого</em>, в отличие от дешёвого ИИ.
+              </h1>
 
-          <div className="mt-10 grid items-end gap-10 md:grid-cols-[1.2fr_1fr]">
-            <p className="max-w-xl text-lg text-muted-foreground md:text-xl">
-              Pulse — performance-агентство, которое относится к вашему рекламному бюджету как
-              к собственному. Стратегия, медиабаинг, аналитика и креатив — в одной команде.
-            </p>
-            <div className="flex flex-col gap-3 sm:flex-row md:justify-end">
-              <Link
-                to="/contact"
-                className="group inline-flex items-center justify-center gap-2 rounded-full bg-foreground px-6 py-3.5 text-sm font-medium text-background transition-all hover:gap-3"
-              >
-                Получить аудит бесплатно
-                <span aria-hidden className="transition-transform group-hover:translate-x-1">→</span>
-              </Link>
-              <Link
-                to="/services"
-                className="inline-flex items-center justify-center gap-2 rounded-full border border-foreground/20 bg-transparent px-6 py-3.5 text-sm font-medium text-foreground transition-colors hover:bg-foreground/5"
-              >
-                Смотреть услуги
-              </Link>
+              <p className="mt-8 max-w-xl text-lg text-muted-foreground md:text-xl">
+                ARYN TEAM — команда видеопродакшена и performance-маркетинга в Алматы.
+                Делаем рекламу, которую хочется досмотреть, и считаем её до тиынки.
+              </p>
+
+              <div className="mt-10 flex flex-col gap-3 sm:flex-row">
+                <ContactDialog
+                  title="Бесплатный аудит"
+                  description="Оставьте контакты — за 24 часа разберём вашу рекламу и подсветим точки роста."
+                  trigger={
+                    <button
+                      type="button"
+                      className="group inline-flex items-center justify-center gap-2 rounded-full bg-foreground px-6 py-3.5 text-sm font-medium text-background transition-all hover:gap-3"
+                    >
+                      Получить аудит бесплатно
+                      <span aria-hidden className="transition-transform group-hover:translate-x-1">→</span>
+                    </button>
+                  }
+                />
+                <Link
+                  to="/services"
+                  className="inline-flex items-center justify-center gap-2 rounded-full border border-foreground/20 bg-transparent px-6 py-3.5 text-sm font-medium text-foreground transition-colors hover:bg-foreground/5"
+                >
+                  Смотреть услуги
+                </Link>
+              </div>
+            </div>
+
+            {/* Right: specialist photo placeholder */}
+            <div className="relative">
+              <div className="relative aspect-[4/5] overflow-hidden rounded-3xl border border-hairline bg-secondary">
+                {/* Placeholder until photo is uploaded */}
+                <div className="absolute inset-0 flex items-end justify-center bg-gradient-to-b from-transparent via-transparent to-foreground/5">
+                  <div className="flex h-full w-full flex-col items-center justify-center gap-3 text-muted-foreground">
+                    <span className="font-mono text-xs uppercase tracking-widest">
+                      Фото специалиста
+                    </span>
+                    <span className="font-display text-6xl font-medium tracking-tight text-foreground/10">
+                      ARYN
+                    </span>
+                  </div>
+                </div>
+                <span className="absolute left-4 top-4 rounded-full bg-background/90 px-3 py-1 text-xs font-mono uppercase tracking-widest backdrop-blur">
+                  Founder
+                </span>
+                <span className="absolute bottom-4 right-4 rounded-full bg-accent px-3 py-1 text-xs font-medium text-accent-foreground">
+                  10+ лет в индустрии
+                </span>
+              </div>
             </div>
           </div>
 
@@ -106,32 +153,26 @@ function HomePage() {
             ))}
           </div>
         </div>
-
-        {/* Decorative big mark */}
-        <div
-          aria-hidden
-          className="pointer-events-none absolute -right-20 -top-20 hidden font-display text-[28rem] font-medium leading-none text-accent/30 lg:block"
-        >
-          P.
-        </div>
       </section>
 
-      {/* LOGOS MARQUEE */}
+      {/* PARTNERS MARQUEE — placeholders */}
       <section className="border-b border-hairline py-10">
         <div className="mx-auto max-w-7xl px-6 lg:px-10">
           <p className="text-center text-xs font-mono uppercase tracking-widest text-muted-foreground">
-            Нам доверяют рост
+            Нам доверяют
           </p>
         </div>
         <div className="mt-6 overflow-hidden">
-          <div className="marquee flex w-max items-center gap-16 whitespace-nowrap pr-16">
-            {[...logos, ...logos].map((logo, i) => (
-              <span
-                key={`${logo}-${i}`}
-                className="font-display text-3xl font-medium tracking-tight text-foreground/30 transition-colors hover:text-foreground"
+          <div className="marquee flex w-max items-center gap-6 whitespace-nowrap pr-6">
+            {[...partners, ...partners].map((p, i) => (
+              <div
+                key={`${p}-${i}`}
+                className="flex h-16 w-44 shrink-0 items-center justify-center rounded-xl border border-dashed border-hairline bg-secondary/50"
               >
-                {logo}
-              </span>
+                <span className="font-mono text-xs uppercase tracking-widest text-muted-foreground">
+                  {p}
+                </span>
+              </div>
             ))}
           </div>
         </div>
@@ -193,52 +234,37 @@ function HomePage() {
         </div>
       </section>
 
-      {/* TESTIMONIAL */}
-      <section className="border-b border-hairline">
-        <div className="mx-auto max-w-5xl px-6 py-24 text-center lg:py-32">
-          <p className="text-xs font-mono uppercase tracking-widest text-muted-foreground">
-            / Отзыв
-          </p>
-          <blockquote className="mt-8 font-display text-3xl font-medium leading-snug tracking-tight text-balance md:text-5xl">
-            «За полгода с Pulse мы снизили CAC на 41% и вышли на стабильный
-            <span className="bg-accent px-2"> ×3 ROAS </span>
-            в основных каналах. Прозрачно, по делу, без воды.»
-          </blockquote>
-          <div className="mt-10 flex items-center justify-center gap-4">
-            <div className="h-12 w-12 rounded-full bg-foreground/10" />
-            <div className="text-left">
-              <div className="font-medium">Анна Воронцова</div>
-              <div className="text-sm text-muted-foreground">CMO, Northwave</div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* CTA */}
+      {/* CTA — Аудит рекламы */}
       <section>
         <div className="mx-auto max-w-7xl px-6 py-24 lg:px-10 lg:py-32">
           <div className="relative overflow-hidden rounded-3xl bg-foreground p-10 text-background md:p-16 lg:p-20">
             <div className="relative z-10 grid items-center gap-10 md:grid-cols-[2fr_1fr]">
               <div>
                 <p className="text-xs font-mono uppercase tracking-widest text-background/60">
-                  Бесплатный аудит
+                  Аудит вашей текущей рекламы
                 </p>
                 <h2 className="mt-6 font-display text-4xl font-medium leading-tight tracking-tight md:text-6xl">
                   Покажем, где утекает <em className="not-italic text-accent">бюджет</em>.
                 </h2>
                 <p className="mt-6 max-w-xl text-background/70">
-                  За 30 минут разберём ваши кампании и подсветим точки роста. Без обязательств,
-                  без шаблонных презентаций.
+                  За 30 минут разберём ваши кампании, креативы и посадочные. Подсветим
+                  точки роста и дадим конкретные действия. Бесплатно, без шаблонных презентаций.
                 </p>
               </div>
               <div className="md:justify-self-end">
-                <Link
-                  to="/contact"
-                  className="group inline-flex items-center gap-2 rounded-full bg-accent px-7 py-4 text-base font-medium text-accent-foreground transition-all hover:gap-3"
-                >
-                  Запросить аудит
-                  <span aria-hidden className="transition-transform group-hover:translate-x-1">→</span>
-                </Link>
+                <ContactDialog
+                  title="Запросить аудит"
+                  description="Оставьте контакты — свяжемся в течение рабочего дня."
+                  trigger={
+                    <button
+                      type="button"
+                      className="group inline-flex items-center gap-2 rounded-full bg-accent px-7 py-4 text-base font-medium text-accent-foreground transition-all hover:gap-3"
+                    >
+                      Запросить аудит
+                      <span aria-hidden className="transition-transform group-hover:translate-x-1">→</span>
+                    </button>
+                  }
+                />
               </div>
             </div>
 
