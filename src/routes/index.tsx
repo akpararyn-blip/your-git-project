@@ -172,16 +172,21 @@ function HomePage() {
             Нам доверяют
           </p>
         </div>
-        <div className="mt-6 overflow-hidden">
-          <div className="marquee flex w-max items-center gap-6 whitespace-nowrap pr-6">
+        <div className="mt-8 overflow-hidden [mask-image:linear-gradient(90deg,transparent,#000_8%,#000_92%,transparent)]">
+          <div className="marquee flex w-max items-center gap-12 whitespace-nowrap pr-12 md:gap-16 md:pr-16">
             {[...partners, ...partners].map((p, i) => (
               <div
-                key={`${p}-${i}`}
-                className="flex h-16 w-44 shrink-0 items-center justify-center rounded-xl border border-dashed border-hairline bg-secondary/50"
+                key={`${p.name}-${i}`}
+                className="flex h-14 shrink-0 items-center justify-center md:h-16"
+                title={p.name}
               >
-                <span className="font-mono text-xs uppercase tracking-widest text-muted-foreground">
-                  {p}
-                </span>
+                <img
+                  src={p.src}
+                  alt={p.name}
+                  loading="lazy"
+                  decoding="async"
+                  className="h-full w-auto max-w-[160px] object-contain opacity-70 grayscale transition-all duration-300 hover:opacity-100 hover:grayscale-0 md:max-w-[180px]"
+                />
               </div>
             ))}
           </div>
