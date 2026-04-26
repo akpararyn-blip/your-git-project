@@ -7,14 +7,18 @@ export function SiteFooter() {
         <div className="grid grid-cols-2 gap-10 md:grid-cols-4">
           <div className="col-span-2">
             <Link to="/" className="flex items-center gap-2">
-              <span className="h-2.5 w-2.5 rounded-full bg-foreground" />
-              <span className="font-display text-2xl font-medium tracking-tight">
-                Pulse<span className="text-muted-foreground">.</span>
+              <span className="flex items-center gap-0.5">
+                <span className="h-2 w-2 rounded-full bg-[oklch(0.55_0.22_255)]" />
+                <span className="h-2 w-2 rounded-full bg-foreground" />
+                <span className="h-2 w-2 rounded-full bg-[oklch(0.85_0.18_85)]" />
+              </span>
+              <span className="font-display text-2xl font-medium uppercase tracking-[0.2em]">
+                ARYN<span className="ml-1 text-muted-foreground">TEAM</span>
               </span>
             </Link>
             <p className="mt-4 max-w-sm text-sm text-muted-foreground">
-              Performance-маркетинг с прозрачной аналитикой. Превращаем рекламные бюджеты в
-              предсказуемую выручку.
+              Снимаем оригинальный контент, который смотрится дорого. Performance-маркетинг
+              и видеопродакшен с прозрачной аналитикой.
             </p>
           </div>
 
@@ -34,16 +38,29 @@ export function SiteFooter() {
               Контакты
             </h4>
             <ul className="space-y-2 text-sm text-muted-foreground">
-              <li>hello@pulse.agency</li>
-              <li>+7 495 000 00 00</li>
-              <li>Москва · удалённо</li>
+              <li>
+                <a href="tel:+77074842108" className="hover:text-foreground">
+                  +7 707 484 2108
+                </a>
+              </li>
+              <li>
+                <a
+                  href="https://t.me/arynbg"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-foreground"
+                >
+                  Telegram: @arynbg
+                </a>
+              </li>
+              <li>Алматы</li>
             </ul>
           </div>
         </div>
 
         <div className="mt-16 flex flex-col items-start justify-between gap-4 border-t border-hairline pt-8 text-xs text-muted-foreground md:flex-row md:items-center">
-          <p>© {new Date().getFullYear()} Pulse Agency. Все права защищены.</p>
-          <p className="font-mono">v1.0 — built for measurable growth</p>
+          <p>© {new Date().getFullYear()} ARYN TEAM. Все права защищены.</p>
+          <p className="font-mono">built for measurable growth</p>
         </div>
       </div>
     </footer>
