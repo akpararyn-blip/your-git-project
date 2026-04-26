@@ -1,5 +1,14 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { ContactDialog } from "@/components/contact-dialog";
+import partnerVenatura from "@/assets/partners/venatura.png";
+import partnerKaspi from "@/assets/partners/kaspi.png";
+import partnerOtis from "@/assets/partners/otis.png";
+import partnerChangan from "@/assets/partners/changan.png";
+import partnerChery from "@/assets/partners/chery.png";
+import partnerHyundai from "@/assets/partners/hyundai.png";
+import partnerByd from "@/assets/partners/byd.png";
+import partnerToyota from "@/assets/partners/toyota.png";
+import partnerSubaru from "@/assets/partners/subaru.png";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -33,14 +42,15 @@ function HomePage() {
   ];
 
   const partners = [
-    "Партнёр 01",
-    "Партнёр 02",
-    "Партнёр 03",
-    "Партнёр 04",
-    "Партнёр 05",
-    "Партнёр 06",
-    "Партнёр 07",
-    "Партнёр 08",
+    { name: "Venatura", src: partnerVenatura },
+    { name: "Kaspi.kz", src: partnerKaspi },
+    { name: "Отис", src: partnerOtis },
+    { name: "Changan", src: partnerChangan },
+    { name: "Chery", src: partnerChery },
+    { name: "Hyundai", src: partnerHyundai },
+    { name: "BYD", src: partnerByd },
+    { name: "Toyota", src: partnerToyota },
+    { name: "Subaru", src: partnerSubaru },
   ];
 
   const principles = [
