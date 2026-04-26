@@ -1,5 +1,14 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { ContactDialog } from "@/components/contact-dialog";
+import partnerVenatura from "@/assets/partners/venatura.png";
+import partnerKaspi from "@/assets/partners/kaspi.png";
+import partnerOtis from "@/assets/partners/otis.png";
+import partnerChangan from "@/assets/partners/changan.png";
+import partnerChery from "@/assets/partners/chery.png";
+import partnerHyundai from "@/assets/partners/hyundai.png";
+import partnerByd from "@/assets/partners/byd.png";
+import partnerToyota from "@/assets/partners/toyota.png";
+import partnerSubaru from "@/assets/partners/subaru.png";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -33,14 +42,15 @@ function HomePage() {
   ];
 
   const partners = [
-    "Партнёр 01",
-    "Партнёр 02",
-    "Партнёр 03",
-    "Партнёр 04",
-    "Партнёр 05",
-    "Партнёр 06",
-    "Партнёр 07",
-    "Партнёр 08",
+    { name: "Venatura", src: partnerVenatura },
+    { name: "Kaspi.kz", src: partnerKaspi },
+    { name: "Отис", src: partnerOtis },
+    { name: "Changan", src: partnerChangan },
+    { name: "Chery", src: partnerChery },
+    { name: "Hyundai", src: partnerHyundai },
+    { name: "BYD", src: partnerByd },
+    { name: "Toyota", src: partnerToyota },
+    { name: "Subaru", src: partnerSubaru },
   ];
 
   const principles = [
@@ -162,16 +172,21 @@ function HomePage() {
             Нам доверяют
           </p>
         </div>
-        <div className="mt-6 overflow-hidden">
-          <div className="marquee flex w-max items-center gap-6 whitespace-nowrap pr-6">
+        <div className="mt-8 overflow-hidden [mask-image:linear-gradient(90deg,transparent,#000_8%,#000_92%,transparent)]">
+          <div className="marquee flex w-max items-center gap-12 whitespace-nowrap pr-12 md:gap-16 md:pr-16">
             {[...partners, ...partners].map((p, i) => (
               <div
-                key={`${p}-${i}`}
-                className="flex h-16 w-44 shrink-0 items-center justify-center rounded-xl border border-dashed border-hairline bg-secondary/50"
+                key={`${p.name}-${i}`}
+                className="flex h-14 shrink-0 items-center justify-center md:h-16"
+                title={p.name}
               >
-                <span className="font-mono text-xs uppercase tracking-widest text-muted-foreground">
-                  {p}
-                </span>
+                <img
+                  src={p.src}
+                  alt={p.name}
+                  loading="lazy"
+                  decoding="async"
+                  className="h-full w-auto max-w-[160px] object-contain opacity-70 grayscale transition-all duration-300 hover:opacity-100 hover:grayscale-0 md:max-w-[180px]"
+                />
               </div>
             ))}
           </div>

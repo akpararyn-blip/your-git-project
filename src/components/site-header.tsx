@@ -1,19 +1,19 @@
 import { Link } from "@tanstack/react-router";
 import { ContactDialog } from "./contact-dialog";
+import logo from "@/assets/aryn-logo.png";
 
 export function SiteHeader() {
   return (
     <header className="sticky top-0 z-40 border-b border-hairline/70 bg-background/80 backdrop-blur-md">
       <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-6 lg:px-10">
-        <Link to="/" className="group flex items-center gap-2">
-          <span className="flex items-center gap-0.5">
-            <span className="h-2 w-2 rounded-full bg-[oklch(0.55_0.22_255)]" />
-            <span className="h-2 w-2 rounded-full bg-foreground" />
-            <span className="h-2 w-2 rounded-full bg-[oklch(0.85_0.18_85)]" />
-          </span>
-          <span className="font-display text-xl font-medium uppercase tracking-[0.2em]">
-            ARYN<span className="ml-1 text-muted-foreground">TEAM</span>
-          </span>
+        <Link to="/" className="flex items-center" aria-label="ARYN TEAM — на главную">
+          <img
+            src={logo}
+            alt="ARYN TEAM"
+            className="h-8 w-auto md:h-9"
+            loading="eager"
+            decoding="async"
+          />
         </Link>
 
         <nav className="hidden items-center gap-8 text-sm md:flex">
