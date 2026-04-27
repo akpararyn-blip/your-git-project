@@ -143,49 +143,144 @@ function ServicesPage() {
             / Услуги
           </p>
           <h1 className="mt-6 max-w-4xl font-display text-5xl font-medium leading-[1] tracking-tight text-balance md:text-7xl lg:text-8xl">
-            Видео и реклама. <em className="not-italic">Один</em> измеримый результат.
+            Performance-маркетинг. <em className="not-italic">Один</em> измеримый результат.
           </h1>
           <p className="mt-8 max-w-2xl text-lg text-muted-foreground md:text-xl">
-            Мы не продаём «услуги ради услуг». Подбираем только те форматы и каналы, которые
-            окупятся в рамках вашей юнит-экономики.
+            Основное направление — комплексный маркетинг под выручку. Видеопродакшен и аудит
+            рекламы — в дополнение, когда они усиливают результат.
           </p>
         </div>
       </section>
 
-      {/* AUDIT CTA */}
-      <section className="border-b border-hairline bg-secondary/40">
-        <div className="mx-auto flex max-w-7xl flex-col items-start justify-between gap-6 px-6 py-12 md:flex-row md:items-center lg:px-10">
-          <div>
-            <p className="text-xs font-mono uppercase tracking-widest text-muted-foreground">
-              / Бесплатно
-            </p>
-            <h2 className="mt-3 font-display text-2xl font-medium leading-tight tracking-tight md:text-3xl">
-              Аудит вашей текущей рекламы за 30 минут
-            </h2>
-          </div>
-          <ContactDialog
-            title="Аудит рекламы"
-            description="Оставьте контакты — свяжемся и согласуем удобное время."
-            trigger={
-              <button
-                type="button"
-                className="group inline-flex items-center gap-2 rounded-full bg-foreground px-6 py-3.5 text-sm font-medium text-background transition-all hover:gap-3"
-              >
-                Запросить аудит
-                <span aria-hidden className="transition-transform group-hover:translate-x-1">→</span>
-              </button>
-            }
-          />
-        </div>
-      </section>
-
-      {/* VIDEO PRODUCTION */}
+      {/* SERVICES GRID — основная услуга */}
       <section className="border-b border-hairline">
         <div className="mx-auto max-w-7xl px-6 py-24 lg:px-10 lg:py-32">
           <div className="flex flex-col items-start justify-between gap-6 md:flex-row md:items-end">
             <div>
               <p className="text-xs font-mono uppercase tracking-widest text-muted-foreground">
-                / Видеопродакшен
+                / Основная услуга — Маркетинг
+              </p>
+              <h2 className="mt-6 max-w-3xl font-display text-4xl font-medium leading-tight tracking-tight md:text-5xl">
+                Шесть направлений performance-маркетинга.
+              </h2>
+            </div>
+            <p className="max-w-md text-muted-foreground">
+              Берём задачу под ключ: от стратегии и креативов до сквозной аналитики и
+              оптимизации по выручке.
+            </p>
+          </div>
+
+          <div className="mt-16 grid gap-px overflow-hidden rounded-3xl border border-hairline bg-hairline md:grid-cols-2 lg:grid-cols-3">
+            {services.map((s) => (
+              <article
+                key={s.no}
+                className="group relative flex flex-col bg-background p-8 transition-colors hover:bg-secondary md:p-10"
+              >
+                <div className="flex items-center justify-between">
+                  <span className="font-mono text-xs text-muted-foreground">{s.no}</span>
+                  <span className="h-2 w-2 rounded-full bg-accent opacity-0 transition-opacity group-hover:opacity-100" />
+                </div>
+                <h3 className="mt-12 font-display text-3xl font-medium leading-tight tracking-tight">
+                  {s.title}
+                </h3>
+                <p className="mt-3 text-muted-foreground">{s.summary}</p>
+                <ul className="mt-6 space-y-2 text-sm">
+                  {s.points.map((p) => (
+                    <li key={p} className="flex items-start gap-2 text-foreground/80">
+                      <span aria-hidden className="mt-2 h-px w-3 bg-foreground/40" />
+                      {p}
+                    </li>
+                  ))}
+                </ul>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ADDITIONAL SERVICES — заголовок */}
+      <section className="border-b border-hairline bg-secondary/40">
+        <div className="mx-auto max-w-7xl px-6 py-16 lg:px-10 lg:py-20">
+          <p className="text-xs font-mono uppercase tracking-widest text-muted-foreground">
+            / Дополнительно
+          </p>
+          <h2 className="mt-6 max-w-3xl font-display text-4xl font-medium leading-tight tracking-tight md:text-5xl">
+            Дополнительные услуги
+          </h2>
+          <p className="mt-6 max-w-2xl text-muted-foreground">
+            Подключаем точечно — отдельно или к маркетинговому контракту.
+          </p>
+        </div>
+      </section>
+
+      {/* AUDIT — доп. услуга */}
+      <section className="border-b border-hairline">
+        <div className="mx-auto max-w-7xl px-6 py-20 lg:px-10 lg:py-24">
+          <div className="grid gap-10 rounded-3xl border border-hairline bg-background p-8 md:grid-cols-[1.2fr_1fr] md:p-12">
+            <div>
+              <p className="text-xs font-mono uppercase tracking-widest text-muted-foreground">
+                / Доп. услуга · A1
+              </p>
+              <h3 className="mt-6 font-display text-3xl font-medium leading-tight tracking-tight md:text-4xl">
+                Аудит рекламы за 30 минут
+              </h3>
+              <p className="mt-4 max-w-xl text-muted-foreground">
+                Разберём ваши текущие рекламные кабинеты, аналитику и креативы. Покажем точки
+                роста и быстрые победы — без обязательств.
+              </p>
+              <ul className="mt-6 space-y-2 text-sm">
+                {[
+                  "Структура кампаний и ставок",
+                  "Аналитика и атрибуция",
+                  "Креативы и посадочные",
+                  "План действий на 30 дней",
+                ].map((p) => (
+                  <li key={p} className="flex items-start gap-2 text-foreground/80">
+                    <span aria-hidden className="mt-2 h-px w-3 bg-foreground/40" />
+                    {p}
+                  </li>
+                ))}
+              </ul>
+            </div>
+            <div className="flex flex-col justify-between gap-8 rounded-2xl bg-secondary/60 p-8">
+              <div>
+                <p className="text-xs font-mono uppercase tracking-widest text-muted-foreground">
+                  Стоимость
+                </p>
+                <div className="mt-3 flex items-baseline gap-2">
+                  <span className="font-display text-4xl font-medium tracking-tight">
+                    Бесплатно
+                  </span>
+                </div>
+                <p className="mt-3 text-sm text-muted-foreground">
+                  Онлайн-встреча 30 минут с маркетологом и аналитиком.
+                </p>
+              </div>
+              <ContactDialog
+                title="Аудит рекламы"
+                description="Оставьте контакты — свяжемся и согласуем удобное время."
+                trigger={
+                  <button
+                    type="button"
+                    className="group inline-flex items-center justify-center gap-2 rounded-full bg-foreground px-6 py-3.5 text-sm font-medium text-background transition-all hover:gap-3"
+                  >
+                    Запросить аудит
+                    <span aria-hidden className="transition-transform group-hover:translate-x-1">→</span>
+                  </button>
+                }
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* VIDEO PRODUCTION — доп. услуга */}
+      <section className="border-b border-hairline">
+        <div className="mx-auto max-w-7xl px-6 py-24 lg:px-10 lg:py-32">
+          <div className="flex flex-col items-start justify-between gap-6 md:flex-row md:items-end">
+            <div>
+              <p className="text-xs font-mono uppercase tracking-widest text-muted-foreground">
+                / Доп. услуга — Видеопродакшен
               </p>
               <h2 className="mt-6 font-display text-4xl font-medium leading-tight tracking-tight md:text-5xl">
                 Снимаем то, что хочется <em className="not-italic">досмотреть</em>.
@@ -193,7 +288,7 @@ function ServicesPage() {
             </div>
             <p className="max-w-md text-muted-foreground">
               Сценарий, съёмка, монтаж и цветокоррекция — под ключ. Цены указаны за готовый ролик
-              без срытых доплат.
+              без скрытых доплат.
             </p>
           </div>
 
@@ -221,44 +316,6 @@ function ServicesPage() {
                     <span className="text-sm text-muted-foreground">/ {v.unit}</span>
                   </div>
                 </div>
-              </article>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* SERVICES GRID */}
-      <section className="border-b border-hairline">
-        <div className="mx-auto max-w-7xl px-6 py-24 lg:px-10">
-          <p className="text-xs font-mono uppercase tracking-widest text-muted-foreground">
-            / Маркетинг
-          </p>
-          <h2 className="mt-6 max-w-3xl font-display text-4xl font-medium leading-tight tracking-tight md:text-5xl">
-            Шесть направлений performance-маркетинга.
-          </h2>
-
-          <div className="mt-16 grid gap-px overflow-hidden rounded-3xl border border-hairline bg-hairline md:grid-cols-2 lg:grid-cols-3">
-            {services.map((s) => (
-              <article
-                key={s.no}
-                className="group relative flex flex-col bg-background p-8 transition-colors hover:bg-secondary md:p-10"
-              >
-                <div className="flex items-center justify-between">
-                  <span className="font-mono text-xs text-muted-foreground">{s.no}</span>
-                  <span className="h-2 w-2 rounded-full bg-accent opacity-0 transition-opacity group-hover:opacity-100" />
-                </div>
-                <h3 className="mt-12 font-display text-3xl font-medium leading-tight tracking-tight">
-                  {s.title}
-                </h3>
-                <p className="mt-3 text-muted-foreground">{s.summary}</p>
-                <ul className="mt-6 space-y-2 text-sm">
-                  {s.points.map((p) => (
-                    <li key={p} className="flex items-start gap-2 text-foreground/80">
-                      <span aria-hidden className="mt-2 h-px w-3 bg-foreground/40" />
-                      {p}
-                    </li>
-                  ))}
-                </ul>
               </article>
             ))}
           </div>
