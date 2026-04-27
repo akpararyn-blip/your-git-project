@@ -13,20 +13,20 @@ import partnerSubaru from "@/assets/partners/subaru.png";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "ARYN TEAM — Видеопродакшен и performance-маркетинг" },
+      { title: "ARYN TEAM — Performance-маркетинг под ключ в Алматы" },
       {
         name: "description",
         content:
-          "ARYN TEAM — снимаем оригинальный видеоконтент, который смотрится дорого. Рекламные ролики, имиджевые видео и performance-маркетинг полного цикла в Алматы.",
+          "ARYN TEAM — комплексный performance-маркетинг: реклама в Google, Instagram, TikTok и Яндекс, аналитика, SEO и видеоконтент. Прозрачно, под выручку.",
       },
       {
         property: "og:title",
-        content: "ARYN TEAM — Видеопродакшен и performance-маркетинг",
+        content: "ARYN TEAM — Performance-маркетинг под ключ в Алматы",
       },
       {
         property: "og:description",
         content:
-          "Оригинальный контент вместо дешевого ИИ. Видеоролики, реклама, аналитика — под ключ.",
+          "Реклама, аналитика, контент и дизайн — одна команда вместо пяти подрядчиков.",
       },
     ],
   }),
