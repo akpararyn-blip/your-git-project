@@ -13,20 +13,20 @@ import partnerSubaru from "@/assets/partners/subaru.png";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "ARYN TEAM — Видеопродакшен и performance-маркетинг" },
+      { title: "ARYN TEAM — Performance-маркетинг под ключ в Алматы" },
       {
         name: "description",
         content:
-          "ARYN TEAM — снимаем оригинальный видеоконтент, который смотрится дорого. Рекламные ролики, имиджевые видео и performance-маркетинг полного цикла в Алматы.",
+          "ARYN TEAM — комплексный performance-маркетинг: реклама в Google, Instagram, TikTok и Яндекс, аналитика, SEO и видеоконтент. Прозрачно, под выручку.",
       },
       {
         property: "og:title",
-        content: "ARYN TEAM — Видеопродакшен и performance-маркетинг",
+        content: "ARYN TEAM — Performance-маркетинг под ключ в Алматы",
       },
       {
         property: "og:description",
         content:
-          "Оригинальный контент вместо дешевого ИИ. Видеоролики, реклама, аналитика — под ключ.",
+          "Реклама, аналитика, контент и дизайн — одна команда вместо пяти подрядчиков.",
       },
     ],
   }),
@@ -88,20 +88,20 @@ function HomePage() {
         <div className="mx-auto max-w-7xl px-6 pb-20 pt-16 lg:px-10 lg:pt-24">
           <div className="flex items-center gap-3 text-xs font-mono uppercase tracking-widest text-muted-foreground">
             <span className="h-px w-8 bg-foreground/40" />
-            ARYN TEAM · Almaty · Video & Performance
+            ARYN TEAM · Almaty · Performance Marketing
           </div>
 
           <div className="mt-10 grid items-center gap-12 lg:grid-cols-[1.2fr_1fr] lg:gap-16">
             {/* Left: heading + actions */}
             <div>
               <h1 className="font-display text-4xl font-medium leading-[1.02] tracking-tight text-balance md:text-6xl lg:text-[5rem]">
-                Снимаем оригинальный контент, который смотрится{" "}
-                <em className="not-italic">дорого</em>, в отличие от дешёвого ИИ.
+                Performance-маркетинг, который приносит{" "}
+                <em className="not-italic">выручку</em>, а не отчёты.
               </h1>
 
               <p className="mt-8 max-w-xl text-lg text-muted-foreground md:text-xl">
-                ARYN TEAM — команда видеопродакшена и performance-маркетинга в Алматы.
-                Делаем рекламу, которую хочется досмотреть, и считаем её до тиынки.
+                ARYN TEAM — комплексный маркетинг под ключ в Алматы. Реклама во всех каналах,
+                сквозная аналитика и оригинальный контент — одна команда вместо пяти подрядчиков.
               </p>
 
               <div className="mt-10 flex flex-col gap-3 sm:flex-row">
