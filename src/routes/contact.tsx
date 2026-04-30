@@ -1,6 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { useState, type FormEvent } from "react";
-import { formatKzPhone, isValidKzPhone } from "@/lib/phone-mask";
+import { ContactForm } from "@/components/contact-form";
 
 export const Route = createFileRoute("/contact")({
   head: () => ({
@@ -27,33 +26,6 @@ function ContactPage() {
     { label: "Telegram", value: "@arynbg", href: "https://t.me/arynbg" },
   ];
 
-  const budgets = [
-    "до 500 000 тг",
-    "500 000 — 2 млн тг",
-    "2—5 млн тг",
-    "более 5 млн тг",
-  ];
-
-  const [submitted, setSubmitted] = useState(false);
-  const [budget, setBudget] = useState<string | null>(null);
-  const [name, setName] = useState("");
-  const [phone, setPhone] = useState("+7 (");
-  const [phoneError, setPhoneError] = useState<string | null>(null);
-
-  function handlePhoneChange(e: React.ChangeEvent<HTMLInputElement>) {
-    setPhone(formatKzPhone(e.target.value));
-    if (phoneError) setPhoneError(null);
-  }
-
-  function handleSubmit(e: FormEvent<HTMLFormElement>) {
-    e.preventDefault();
-    if (!isValidKzPhone(phone)) {
-      setPhoneError("Введите казахстанский номер: +7 (___) ___-__-__");
-      return;
-    }
-    setSubmitted(true);
-  }
-
   return (
     <>
       {/* HERO */}
@@ -76,162 +48,9 @@ function ContactPage() {
       <section>
         <div className="mx-auto max-w-7xl px-6 py-20 lg:px-10 lg:py-28">
           <div className="grid gap-16 lg:grid-cols-[1.4fr_1fr] lg:gap-24">
-            {/* Form */}
+            {/* Single source of truth — one ContactForm component */}
             <div>
-              {submitted ? (
-                <div className="rounded-2xl border border-hairline bg-secondary p-10 md:p-14">
-                  <div className="mb-6 inline-flex h-12 w-12 items-center justify-center rounded-full bg-accent text-accent-foreground">
-                    <span className="text-xl">✓</span>
-                  </div>
-                  <h2 className="font-display text-3xl font-medium tracking-tight md:text-4xl">
-                    Заявка отправлена.
-                  </h2>
-                  <p className="mt-4 max-w-md text-muted-foreground">
-                    Свяжемся в течение 24 часов в будний день. Если срочно — напишите нам в
-                    Telegram, отвечаем быстрее.
-                  </p>
-                  <button
-                    type="button"
-                    onClick={() => {
-                      setSubmitted(false);
-                      setBudget(null);
-                      setName("");
-                      setPhone("+7 (");
-                    }}
-                    className="mt-8 text-sm font-medium underline-offset-4 hover:underline"
-                  >
-                    Отправить ещё одну заявку
-                  </button>
-                </div>
-              ) : (
-                <form onSubmit={handleSubmit} className="space-y-8">
-                  <div className="grid gap-6 md:grid-cols-2">
-                    <div>
-                      <label
-                        htmlFor="name"
-                        className="mb-3 block text-xs font-mono uppercase tracking-widest text-muted-foreground"
-                      >
-                        Имя <span className="text-foreground">*</span>
-                      </label>
-                      <input
-                        id="name"
-                        name="name"
-                        required
-                        value={name}
-                        onChange={(e) => setName(e.target.value)}
-                        placeholder="Введите ваше имя"
-                        className="w-full rounded-xl border border-hairline bg-background px-4 py-3 text-base text-foreground placeholder:text-muted-foreground/60 focus:border-foreground focus:outline-none"
-                      />
-                    </div>
-
-                    <div>
-                      <label
-                        htmlFor="company"
-                        className="mb-3 block text-xs font-mono uppercase tracking-widest text-muted-foreground"
-                      >
-                        Компания
-                      </label>
-                      <input
-                        id="company"
-                        name="company"
-                        placeholder="ACME Inc."
-                        className="w-full rounded-xl border border-hairline bg-background px-4 py-3 text-base text-foreground placeholder:text-muted-foreground/60 focus:border-foreground focus:outline-none"
-                      />
-                    </div>
-
-                    <div>
-                      <label
-                        htmlFor="email"
-                        className="mb-3 block text-xs font-mono uppercase tracking-widest text-muted-foreground"
-                      >
-                        Email
-                      </label>
-                      <input
-                        id="email"
-                        name="email"
-                        type="email"
-                        placeholder="you@company.com"
-                        className="w-full rounded-xl border border-hairline bg-background px-4 py-3 text-base text-foreground placeholder:text-muted-foreground/60 focus:border-foreground focus:outline-none"
-                      />
-                    </div>
-
-                    <div>
-                      <label
-                        htmlFor="phone"
-                        className="mb-3 block text-xs font-mono uppercase tracking-widest text-muted-foreground"
-                      >
-                        Телефон <span className="text-foreground">*</span>
-                      </label>
-                      <input
-                        id="phone"
-                        name="phone"
-                        type="tel"
-                        required
-                        inputMode="tel"
-                        value={phone}
-                        onChange={handlePhoneChange}
-                        placeholder="+7 777 000 0000"
-                        className="w-full rounded-xl border border-hairline bg-background px-4 py-3 text-base text-foreground placeholder:text-muted-foreground/60 focus:border-foreground focus:outline-none"
-                      />
-                      {phoneError && (
-                        <p className="mt-2 text-xs text-destructive">{phoneError}</p>
-                      )}
-                    </div>
-                  </div>
-
-                  <div>
-                    <label className="mb-3 block text-xs font-mono uppercase tracking-widest text-muted-foreground">
-                      Рекламный бюджет в месяц
-                    </label>
-                    <div className="flex flex-wrap gap-2">
-                      {budgets.map((b) => (
-                        <button
-                          key={b}
-                          type="button"
-                          onClick={() => setBudget(b)}
-                          className={
-                            "rounded-full border px-4 py-2 text-sm transition-all " +
-                            (budget === b
-                              ? "border-foreground bg-foreground text-background"
-                              : "border-hairline bg-background text-foreground hover:border-foreground/40")
-                          }
-                        >
-                          {b}
-                        </button>
-                      ))}
-                    </div>
-                  </div>
-
-                  <div>
-                    <label
-                      htmlFor="message"
-                      className="mb-3 block text-xs font-mono uppercase tracking-widest text-muted-foreground"
-                    >
-                      Расскажите о проекте
-                    </label>
-                    <textarea
-                      id="message"
-                      name="message"
-                      rows={5}
-                      placeholder="Какие каналы используете, цели на ближайший квартал, текущие сложности…"
-                      className="w-full rounded-xl border border-hairline bg-background px-4 py-3 text-base text-foreground placeholder:text-muted-foreground/60 focus:border-foreground focus:outline-none"
-                    />
-                  </div>
-
-                  <div className="flex flex-col items-start justify-between gap-4 border-t border-hairline pt-6 sm:flex-row sm:items-center">
-                    <p className="text-xs text-muted-foreground">
-                      Нажимая «Отправить», вы соглашаетесь с обработкой персональных данных.
-                    </p>
-                    <button
-                      type="submit"
-                      className="group inline-flex items-center gap-2 rounded-full bg-foreground px-6 py-3.5 text-sm font-medium text-background transition-all hover:gap-3"
-                    >
-                      Отправить заявку
-                      <span aria-hidden className="transition-transform group-hover:translate-x-1">→</span>
-                    </button>
-                  </div>
-                </form>
-              )}
+              <ContactForm variant="page" />
             </div>
 
             {/* Channels */}
