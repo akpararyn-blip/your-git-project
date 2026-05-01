@@ -76,8 +76,7 @@ export function SiteHeader() {
                         {items.map((s) => (
                           <li key={s.slug}>
                             <Link
-                              to="/services/$slug"
-                              params={{ slug: s.slug }}
+                              to={`/services/${s.slug}`}
                               className="group flex items-baseline justify-between gap-3 rounded-lg px-2 py-2 transition-colors hover:bg-secondary"
                             >
                               <span className="font-display text-base font-medium tracking-tight text-foreground">
