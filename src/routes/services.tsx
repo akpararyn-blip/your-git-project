@@ -128,8 +128,7 @@ function ServicesPage() {
                 {items.map((s) => (
                   <Link
                     key={s.slug}
-                    to="/services/$slug"
-                    params={{ slug: s.slug }}
+                    to={`/services/${s.slug}`}
                     className="group relative flex flex-col bg-background p-8 transition-colors hover:bg-secondary md:p-10"
                   >
                     <div className="flex items-center justify-between">
