@@ -12,7 +12,17 @@ import { Route as rootRouteImport } from './routes/__root'
 import { Route as ServicesRouteImport } from './routes/services'
 import { Route as ContactRouteImport } from './routes/contact'
 import { Route as IndexRouteImport } from './routes/index'
-import { Route as ServicesSlugRouteImport } from './routes/services.$slug'
+import { Route as ServicesYandexAdsRouteImport } from './routes/services.yandex-ads'
+import { Route as ServicesVideoRouteImport } from './routes/services.video'
+import { Route as ServicesUxUiRouteImport } from './routes/services.ux-ui'
+import { Route as ServicesTiktokAdsRouteImport } from './routes/services.tiktok-ads'
+import { Route as ServicesSmmRouteImport } from './routes/services.smm'
+import { Route as ServicesSeoRouteImport } from './routes/services.seo'
+import { Route as ServicesInstagramAdsRouteImport } from './routes/services.instagram-ads'
+import { Route as ServicesGoogleAdsRouteImport } from './routes/services.google-ads'
+import { Route as ServicesComplexRouteImport } from './routes/services.complex'
+import { Route as ServicesAuditRouteImport } from './routes/services.audit'
+import { Route as ServicesAnalyticsRouteImport } from './routes/services.analytics'
 
 const ServicesRoute = ServicesRouteImport.update({
   id: '/services',
@@ -29,9 +39,59 @@ const IndexRoute = IndexRouteImport.update({
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
-const ServicesSlugRoute = ServicesSlugRouteImport.update({
-  id: '/$slug',
-  path: '/$slug',
+const ServicesYandexAdsRoute = ServicesYandexAdsRouteImport.update({
+  id: '/yandex-ads',
+  path: '/yandex-ads',
+  getParentRoute: () => ServicesRoute,
+} as any)
+const ServicesVideoRoute = ServicesVideoRouteImport.update({
+  id: '/video',
+  path: '/video',
+  getParentRoute: () => ServicesRoute,
+} as any)
+const ServicesUxUiRoute = ServicesUxUiRouteImport.update({
+  id: '/ux-ui',
+  path: '/ux-ui',
+  getParentRoute: () => ServicesRoute,
+} as any)
+const ServicesTiktokAdsRoute = ServicesTiktokAdsRouteImport.update({
+  id: '/tiktok-ads',
+  path: '/tiktok-ads',
+  getParentRoute: () => ServicesRoute,
+} as any)
+const ServicesSmmRoute = ServicesSmmRouteImport.update({
+  id: '/smm',
+  path: '/smm',
+  getParentRoute: () => ServicesRoute,
+} as any)
+const ServicesSeoRoute = ServicesSeoRouteImport.update({
+  id: '/seo',
+  path: '/seo',
+  getParentRoute: () => ServicesRoute,
+} as any)
+const ServicesInstagramAdsRoute = ServicesInstagramAdsRouteImport.update({
+  id: '/instagram-ads',
+  path: '/instagram-ads',
+  getParentRoute: () => ServicesRoute,
+} as any)
+const ServicesGoogleAdsRoute = ServicesGoogleAdsRouteImport.update({
+  id: '/google-ads',
+  path: '/google-ads',
+  getParentRoute: () => ServicesRoute,
+} as any)
+const ServicesComplexRoute = ServicesComplexRouteImport.update({
+  id: '/complex',
+  path: '/complex',
+  getParentRoute: () => ServicesRoute,
+} as any)
+const ServicesAuditRoute = ServicesAuditRouteImport.update({
+  id: '/audit',
+  path: '/audit',
+  getParentRoute: () => ServicesRoute,
+} as any)
+const ServicesAnalyticsRoute = ServicesAnalyticsRouteImport.update({
+  id: '/analytics',
+  path: '/analytics',
   getParentRoute: () => ServicesRoute,
 } as any)
 
@@ -39,27 +99,100 @@ export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/contact': typeof ContactRoute
   '/services': typeof ServicesRouteWithChildren
-  '/services/$slug': typeof ServicesSlugRoute
+  '/services/analytics': typeof ServicesAnalyticsRoute
+  '/services/audit': typeof ServicesAuditRoute
+  '/services/complex': typeof ServicesComplexRoute
+  '/services/google-ads': typeof ServicesGoogleAdsRoute
+  '/services/instagram-ads': typeof ServicesInstagramAdsRoute
+  '/services/seo': typeof ServicesSeoRoute
+  '/services/smm': typeof ServicesSmmRoute
+  '/services/tiktok-ads': typeof ServicesTiktokAdsRoute
+  '/services/ux-ui': typeof ServicesUxUiRoute
+  '/services/video': typeof ServicesVideoRoute
+  '/services/yandex-ads': typeof ServicesYandexAdsRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/contact': typeof ContactRoute
   '/services': typeof ServicesRouteWithChildren
-  '/services/$slug': typeof ServicesSlugRoute
+  '/services/analytics': typeof ServicesAnalyticsRoute
+  '/services/audit': typeof ServicesAuditRoute
+  '/services/complex': typeof ServicesComplexRoute
+  '/services/google-ads': typeof ServicesGoogleAdsRoute
+  '/services/instagram-ads': typeof ServicesInstagramAdsRoute
+  '/services/seo': typeof ServicesSeoRoute
+  '/services/smm': typeof ServicesSmmRoute
+  '/services/tiktok-ads': typeof ServicesTiktokAdsRoute
+  '/services/ux-ui': typeof ServicesUxUiRoute
+  '/services/video': typeof ServicesVideoRoute
+  '/services/yandex-ads': typeof ServicesYandexAdsRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/contact': typeof ContactRoute
   '/services': typeof ServicesRouteWithChildren
-  '/services/$slug': typeof ServicesSlugRoute
+  '/services/analytics': typeof ServicesAnalyticsRoute
+  '/services/audit': typeof ServicesAuditRoute
+  '/services/complex': typeof ServicesComplexRoute
+  '/services/google-ads': typeof ServicesGoogleAdsRoute
+  '/services/instagram-ads': typeof ServicesInstagramAdsRoute
+  '/services/seo': typeof ServicesSeoRoute
+  '/services/smm': typeof ServicesSmmRoute
+  '/services/tiktok-ads': typeof ServicesTiktokAdsRoute
+  '/services/ux-ui': typeof ServicesUxUiRoute
+  '/services/video': typeof ServicesVideoRoute
+  '/services/yandex-ads': typeof ServicesYandexAdsRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/contact' | '/services' | '/services/$slug'
+  fullPaths:
+    | '/'
+    | '/contact'
+    | '/services'
+    | '/services/analytics'
+    | '/services/audit'
+    | '/services/complex'
+    | '/services/google-ads'
+    | '/services/instagram-ads'
+    | '/services/seo'
+    | '/services/smm'
+    | '/services/tiktok-ads'
+    | '/services/ux-ui'
+    | '/services/video'
+    | '/services/yandex-ads'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/contact' | '/services' | '/services/$slug'
-  id: '__root__' | '/' | '/contact' | '/services' | '/services/$slug'
+  to:
+    | '/'
+    | '/contact'
+    | '/services'
+    | '/services/analytics'
+    | '/services/audit'
+    | '/services/complex'
+    | '/services/google-ads'
+    | '/services/instagram-ads'
+    | '/services/seo'
+    | '/services/smm'
+    | '/services/tiktok-ads'
+    | '/services/ux-ui'
+    | '/services/video'
+    | '/services/yandex-ads'
+  id:
+    | '__root__'
+    | '/'
+    | '/contact'
+    | '/services'
+    | '/services/analytics'
+    | '/services/audit'
+    | '/services/complex'
+    | '/services/google-ads'
+    | '/services/instagram-ads'
+    | '/services/seo'
+    | '/services/smm'
+    | '/services/tiktok-ads'
+    | '/services/ux-ui'
+    | '/services/video'
+    | '/services/yandex-ads'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -91,22 +224,112 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/services/$slug': {
-      id: '/services/$slug'
-      path: '/$slug'
-      fullPath: '/services/$slug'
-      preLoaderRoute: typeof ServicesSlugRouteImport
+    '/services/yandex-ads': {
+      id: '/services/yandex-ads'
+      path: '/yandex-ads'
+      fullPath: '/services/yandex-ads'
+      preLoaderRoute: typeof ServicesYandexAdsRouteImport
+      parentRoute: typeof ServicesRoute
+    }
+    '/services/video': {
+      id: '/services/video'
+      path: '/video'
+      fullPath: '/services/video'
+      preLoaderRoute: typeof ServicesVideoRouteImport
+      parentRoute: typeof ServicesRoute
+    }
+    '/services/ux-ui': {
+      id: '/services/ux-ui'
+      path: '/ux-ui'
+      fullPath: '/services/ux-ui'
+      preLoaderRoute: typeof ServicesUxUiRouteImport
+      parentRoute: typeof ServicesRoute
+    }
+    '/services/tiktok-ads': {
+      id: '/services/tiktok-ads'
+      path: '/tiktok-ads'
+      fullPath: '/services/tiktok-ads'
+      preLoaderRoute: typeof ServicesTiktokAdsRouteImport
+      parentRoute: typeof ServicesRoute
+    }
+    '/services/smm': {
+      id: '/services/smm'
+      path: '/smm'
+      fullPath: '/services/smm'
+      preLoaderRoute: typeof ServicesSmmRouteImport
+      parentRoute: typeof ServicesRoute
+    }
+    '/services/seo': {
+      id: '/services/seo'
+      path: '/seo'
+      fullPath: '/services/seo'
+      preLoaderRoute: typeof ServicesSeoRouteImport
+      parentRoute: typeof ServicesRoute
+    }
+    '/services/instagram-ads': {
+      id: '/services/instagram-ads'
+      path: '/instagram-ads'
+      fullPath: '/services/instagram-ads'
+      preLoaderRoute: typeof ServicesInstagramAdsRouteImport
+      parentRoute: typeof ServicesRoute
+    }
+    '/services/google-ads': {
+      id: '/services/google-ads'
+      path: '/google-ads'
+      fullPath: '/services/google-ads'
+      preLoaderRoute: typeof ServicesGoogleAdsRouteImport
+      parentRoute: typeof ServicesRoute
+    }
+    '/services/complex': {
+      id: '/services/complex'
+      path: '/complex'
+      fullPath: '/services/complex'
+      preLoaderRoute: typeof ServicesComplexRouteImport
+      parentRoute: typeof ServicesRoute
+    }
+    '/services/audit': {
+      id: '/services/audit'
+      path: '/audit'
+      fullPath: '/services/audit'
+      preLoaderRoute: typeof ServicesAuditRouteImport
+      parentRoute: typeof ServicesRoute
+    }
+    '/services/analytics': {
+      id: '/services/analytics'
+      path: '/analytics'
+      fullPath: '/services/analytics'
+      preLoaderRoute: typeof ServicesAnalyticsRouteImport
       parentRoute: typeof ServicesRoute
     }
   }
 }
 
 interface ServicesRouteChildren {
-  ServicesSlugRoute: typeof ServicesSlugRoute
+  ServicesAnalyticsRoute: typeof ServicesAnalyticsRoute
+  ServicesAuditRoute: typeof ServicesAuditRoute
+  ServicesComplexRoute: typeof ServicesComplexRoute
+  ServicesGoogleAdsRoute: typeof ServicesGoogleAdsRoute
+  ServicesInstagramAdsRoute: typeof ServicesInstagramAdsRoute
+  ServicesSeoRoute: typeof ServicesSeoRoute
+  ServicesSmmRoute: typeof ServicesSmmRoute
+  ServicesTiktokAdsRoute: typeof ServicesTiktokAdsRoute
+  ServicesUxUiRoute: typeof ServicesUxUiRoute
+  ServicesVideoRoute: typeof ServicesVideoRoute
+  ServicesYandexAdsRoute: typeof ServicesYandexAdsRoute
 }
 
 const ServicesRouteChildren: ServicesRouteChildren = {
-  ServicesSlugRoute: ServicesSlugRoute,
+  ServicesAnalyticsRoute: ServicesAnalyticsRoute,
+  ServicesAuditRoute: ServicesAuditRoute,
+  ServicesComplexRoute: ServicesComplexRoute,
+  ServicesGoogleAdsRoute: ServicesGoogleAdsRoute,
+  ServicesInstagramAdsRoute: ServicesInstagramAdsRoute,
+  ServicesSeoRoute: ServicesSeoRoute,
+  ServicesSmmRoute: ServicesSmmRoute,
+  ServicesTiktokAdsRoute: ServicesTiktokAdsRoute,
+  ServicesUxUiRoute: ServicesUxUiRoute,
+  ServicesVideoRoute: ServicesVideoRoute,
+  ServicesYandexAdsRoute: ServicesYandexAdsRoute,
 }
 
 const ServicesRouteWithChildren = ServicesRoute._addFileChildren(

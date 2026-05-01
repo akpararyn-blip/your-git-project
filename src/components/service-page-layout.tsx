@@ -193,8 +193,7 @@ export function ServicePageLayout({ service }: ServicePageLayoutProps) {
               {related.map((r) => (
                 <Link
                   key={r.slug}
-                  to="/services/$slug"
-                  params={{ slug: r.slug }}
+                  to={`/services/${r.slug}`}
                   className="group flex flex-col bg-background p-8 transition-colors hover:bg-accent/30"
                 >
                   <h3 className="font-display text-2xl font-medium tracking-tight">{r.title}</h3>
