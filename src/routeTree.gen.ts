@@ -23,7 +23,6 @@ import { Route as ServicesGoogleAdsRouteImport } from './routes/services.google-
 import { Route as ServicesComplexRouteImport } from './routes/services.complex'
 import { Route as ServicesAuditRouteImport } from './routes/services.audit'
 import { Route as ServicesAnalyticsRouteImport } from './routes/services.analytics'
-import { Route as ServicesSlugRouteImport } from './routes/services.$slug'
 
 const ServicesRoute = ServicesRouteImport.update({
   id: '/services',
@@ -95,17 +94,11 @@ const ServicesAnalyticsRoute = ServicesAnalyticsRouteImport.update({
   path: '/analytics',
   getParentRoute: () => ServicesRoute,
 } as any)
-const ServicesSlugRoute = ServicesSlugRouteImport.update({
-  id: '/$slug',
-  path: '/$slug',
-  getParentRoute: () => ServicesRoute,
-} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/contact': typeof ContactRoute
   '/services': typeof ServicesRouteWithChildren
-  '/services/$slug': typeof ServicesSlugRoute
   '/services/analytics': typeof ServicesAnalyticsRoute
   '/services/audit': typeof ServicesAuditRoute
   '/services/complex': typeof ServicesComplexRoute
@@ -122,7 +115,6 @@ export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/contact': typeof ContactRoute
   '/services': typeof ServicesRouteWithChildren
-  '/services/$slug': typeof ServicesSlugRoute
   '/services/analytics': typeof ServicesAnalyticsRoute
   '/services/audit': typeof ServicesAuditRoute
   '/services/complex': typeof ServicesComplexRoute
@@ -140,7 +132,6 @@ export interface FileRoutesById {
   '/': typeof IndexRoute
   '/contact': typeof ContactRoute
   '/services': typeof ServicesRouteWithChildren
-  '/services/$slug': typeof ServicesSlugRoute
   '/services/analytics': typeof ServicesAnalyticsRoute
   '/services/audit': typeof ServicesAuditRoute
   '/services/complex': typeof ServicesComplexRoute
@@ -159,7 +150,6 @@ export interface FileRouteTypes {
     | '/'
     | '/contact'
     | '/services'
-    | '/services/$slug'
     | '/services/analytics'
     | '/services/audit'
     | '/services/complex'
@@ -176,7 +166,6 @@ export interface FileRouteTypes {
     | '/'
     | '/contact'
     | '/services'
-    | '/services/$slug'
     | '/services/analytics'
     | '/services/audit'
     | '/services/complex'
@@ -193,7 +182,6 @@ export interface FileRouteTypes {
     | '/'
     | '/contact'
     | '/services'
-    | '/services/$slug'
     | '/services/analytics'
     | '/services/audit'
     | '/services/complex'
@@ -313,18 +301,10 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ServicesAnalyticsRouteImport
       parentRoute: typeof ServicesRoute
     }
-    '/services/$slug': {
-      id: '/services/$slug'
-      path: '/$slug'
-      fullPath: '/services/$slug'
-      preLoaderRoute: typeof ServicesSlugRouteImport
-      parentRoute: typeof ServicesRoute
-    }
   }
 }
 
 interface ServicesRouteChildren {
-  ServicesSlugRoute: typeof ServicesSlugRoute
   ServicesAnalyticsRoute: typeof ServicesAnalyticsRoute
   ServicesAuditRoute: typeof ServicesAuditRoute
   ServicesComplexRoute: typeof ServicesComplexRoute
@@ -339,7 +319,6 @@ interface ServicesRouteChildren {
 }
 
 const ServicesRouteChildren: ServicesRouteChildren = {
-  ServicesSlugRoute: ServicesSlugRoute,
   ServicesAnalyticsRoute: ServicesAnalyticsRoute,
   ServicesAuditRoute: ServicesAuditRoute,
   ServicesComplexRoute: ServicesComplexRoute,

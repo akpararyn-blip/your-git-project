@@ -88,8 +88,7 @@ function ServicesPage() {
                   </p>
                 </div>
                 <Link
-                  to="/services/$slug"
-                  params={{ slug: primary[0].slug }}
+                  to={`/services/${primary[0].slug}` as string}
                   className="group inline-flex items-center justify-center gap-2 rounded-full bg-foreground px-6 py-3.5 text-sm font-medium text-background transition-all hover:gap-3"
                 >
                   Подробнее
