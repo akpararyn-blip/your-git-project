@@ -210,8 +210,7 @@ export function SiteHeader() {
                         {items.map((s) => (
                           <li key={s.slug}>
                             <Link
-                              to="/services/$slug"
-                              params={{ slug: s.slug }}
+                              to={`/services/${s.slug}`}
                               onClick={() => setMobileOpen(false)}
                               className="flex items-baseline justify-between gap-3 bg-background px-4 py-3 text-sm hover:bg-secondary"
                             >
