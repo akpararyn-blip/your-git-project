@@ -6,7 +6,7 @@ import {
   getServicesByCategory,
 } from "@/lib/services-data";
 
-export const Route = createFileRoute("/services")({
+export const Route = createFileRoute("/services/")({
   head: () => ({
     meta: [
       { title: "Услуги — ARYN TEAM · Performance-маркетинг под ключ" },
