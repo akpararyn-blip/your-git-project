@@ -9,9 +9,9 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
-import { Route as ServicesRouteImport } from './routes/services'
 import { Route as ContactRouteImport } from './routes/contact'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as ServicesIndexRouteImport } from './routes/services.index'
 import { Route as ServicesYandexAdsRouteImport } from './routes/services.yandex-ads'
 import { Route as ServicesVideoRouteImport } from './routes/services.video'
 import { Route as ServicesUxUiRouteImport } from './routes/services.ux-ui'
@@ -24,11 +24,6 @@ import { Route as ServicesComplexRouteImport } from './routes/services.complex'
 import { Route as ServicesAuditRouteImport } from './routes/services.audit'
 import { Route as ServicesAnalyticsRouteImport } from './routes/services.analytics'
 
-const ServicesRoute = ServicesRouteImport.update({
-  id: '/services',
-  path: '/services',
-  getParentRoute: () => rootRouteImport,
-} as any)
 const ContactRoute = ContactRouteImport.update({
   id: '/contact',
   path: '/contact',
@@ -37,6 +32,11 @@ const ContactRoute = ContactRouteImport.update({
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ServicesIndexRoute = ServicesIndexRouteImport.update({
+  id: '/services/',
+  path: '/services/',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ServicesYandexAdsRoute = ServicesYandexAdsRouteImport.update({
@@ -75,9 +75,9 @@ const ServicesInstagramAdsRoute = ServicesInstagramAdsRouteImport.update({
   getParentRoute: () => ServicesRoute,
 } as any)
 const ServicesGoogleAdsRoute = ServicesGoogleAdsRouteImport.update({
-  id: '/google-ads',
-  path: '/google-ads',
-  getParentRoute: () => ServicesRoute,
+  id: '/services/google-ads',
+  path: '/services/google-ads',
+  getParentRoute: () => rootRouteImport,
 } as any)
 const ServicesComplexRoute = ServicesComplexRouteImport.update({
   id: '/complex',
@@ -98,7 +98,6 @@ const ServicesAnalyticsRoute = ServicesAnalyticsRouteImport.update({
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/contact': typeof ContactRoute
-  '/services': typeof ServicesRouteWithChildren
   '/services/analytics': typeof ServicesAnalyticsRoute
   '/services/audit': typeof ServicesAuditRoute
   '/services/complex': typeof ServicesComplexRoute
@@ -110,11 +109,11 @@ export interface FileRoutesByFullPath {
   '/services/ux-ui': typeof ServicesUxUiRoute
   '/services/video': typeof ServicesVideoRoute
   '/services/yandex-ads': typeof ServicesYandexAdsRoute
+  '/services/': typeof ServicesIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/contact': typeof ContactRoute
-  '/services': typeof ServicesRouteWithChildren
   '/services/analytics': typeof ServicesAnalyticsRoute
   '/services/audit': typeof ServicesAuditRoute
   '/services/complex': typeof ServicesComplexRoute
@@ -126,12 +125,12 @@ export interface FileRoutesByTo {
   '/services/ux-ui': typeof ServicesUxUiRoute
   '/services/video': typeof ServicesVideoRoute
   '/services/yandex-ads': typeof ServicesYandexAdsRoute
+  '/services': typeof ServicesIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/contact': typeof ContactRoute
-  '/services': typeof ServicesRouteWithChildren
   '/services/analytics': typeof ServicesAnalyticsRoute
   '/services/audit': typeof ServicesAuditRoute
   '/services/complex': typeof ServicesComplexRoute
@@ -143,13 +142,13 @@ export interface FileRoutesById {
   '/services/ux-ui': typeof ServicesUxUiRoute
   '/services/video': typeof ServicesVideoRoute
   '/services/yandex-ads': typeof ServicesYandexAdsRoute
+  '/services/': typeof ServicesIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
     | '/'
     | '/contact'
-    | '/services'
     | '/services/analytics'
     | '/services/audit'
     | '/services/complex'
@@ -161,11 +160,11 @@ export interface FileRouteTypes {
     | '/services/ux-ui'
     | '/services/video'
     | '/services/yandex-ads'
+    | '/services/'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
     | '/contact'
-    | '/services'
     | '/services/analytics'
     | '/services/audit'
     | '/services/complex'
@@ -177,11 +176,11 @@ export interface FileRouteTypes {
     | '/services/ux-ui'
     | '/services/video'
     | '/services/yandex-ads'
+    | '/services'
   id:
     | '__root__'
     | '/'
     | '/contact'
-    | '/services'
     | '/services/analytics'
     | '/services/audit'
     | '/services/complex'
@@ -193,23 +192,18 @@ export interface FileRouteTypes {
     | '/services/ux-ui'
     | '/services/video'
     | '/services/yandex-ads'
+    | '/services/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   ContactRoute: typeof ContactRoute
-  ServicesRoute: typeof ServicesRouteWithChildren
+  ServicesGoogleAdsRoute: typeof ServicesGoogleAdsRoute
+  ServicesIndexRoute: typeof ServicesIndexRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
-    '/services': {
-      id: '/services'
-      path: '/services'
-      fullPath: '/services'
-      preLoaderRoute: typeof ServicesRouteImport
-      parentRoute: typeof rootRouteImport
-    }
     '/contact': {
       id: '/contact'
       path: '/contact'
@@ -222,6 +216,13 @@ declare module '@tanstack/react-router' {
       path: '/'
       fullPath: '/'
       preLoaderRoute: typeof IndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/services/': {
+      id: '/services/'
+      path: '/services'
+      fullPath: '/services/'
+      preLoaderRoute: typeof ServicesIndexRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/services/yandex-ads': {
@@ -275,10 +276,10 @@ declare module '@tanstack/react-router' {
     }
     '/services/google-ads': {
       id: '/services/google-ads'
-      path: '/google-ads'
+      path: '/services/google-ads'
       fullPath: '/services/google-ads'
       preLoaderRoute: typeof ServicesGoogleAdsRouteImport
-      parentRoute: typeof ServicesRoute
+      parentRoute: typeof rootRouteImport
     }
     '/services/complex': {
       id: '/services/complex'
@@ -304,42 +305,11 @@ declare module '@tanstack/react-router' {
   }
 }
 
-interface ServicesRouteChildren {
-  ServicesAnalyticsRoute: typeof ServicesAnalyticsRoute
-  ServicesAuditRoute: typeof ServicesAuditRoute
-  ServicesComplexRoute: typeof ServicesComplexRoute
-  ServicesGoogleAdsRoute: typeof ServicesGoogleAdsRoute
-  ServicesInstagramAdsRoute: typeof ServicesInstagramAdsRoute
-  ServicesSeoRoute: typeof ServicesSeoRoute
-  ServicesSmmRoute: typeof ServicesSmmRoute
-  ServicesTiktokAdsRoute: typeof ServicesTiktokAdsRoute
-  ServicesUxUiRoute: typeof ServicesUxUiRoute
-  ServicesVideoRoute: typeof ServicesVideoRoute
-  ServicesYandexAdsRoute: typeof ServicesYandexAdsRoute
-}
-
-const ServicesRouteChildren: ServicesRouteChildren = {
-  ServicesAnalyticsRoute: ServicesAnalyticsRoute,
-  ServicesAuditRoute: ServicesAuditRoute,
-  ServicesComplexRoute: ServicesComplexRoute,
-  ServicesGoogleAdsRoute: ServicesGoogleAdsRoute,
-  ServicesInstagramAdsRoute: ServicesInstagramAdsRoute,
-  ServicesSeoRoute: ServicesSeoRoute,
-  ServicesSmmRoute: ServicesSmmRoute,
-  ServicesTiktokAdsRoute: ServicesTiktokAdsRoute,
-  ServicesUxUiRoute: ServicesUxUiRoute,
-  ServicesVideoRoute: ServicesVideoRoute,
-  ServicesYandexAdsRoute: ServicesYandexAdsRoute,
-}
-
-const ServicesRouteWithChildren = ServicesRoute._addFileChildren(
-  ServicesRouteChildren,
-)
-
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   ContactRoute: ContactRoute,
-  ServicesRoute: ServicesRouteWithChildren,
+  ServicesGoogleAdsRoute: ServicesGoogleAdsRoute,
+  ServicesIndexRoute: ServicesIndexRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
