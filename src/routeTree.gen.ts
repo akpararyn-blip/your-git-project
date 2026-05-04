@@ -40,39 +40,39 @@ const ServicesIndexRoute = ServicesIndexRouteImport.update({
   getParentRoute: () => rootRouteImport,
 } as any)
 const ServicesYandexAdsRoute = ServicesYandexAdsRouteImport.update({
-  id: '/yandex-ads',
-  path: '/yandex-ads',
-  getParentRoute: () => ServicesRoute,
+  id: '/services/yandex-ads',
+  path: '/services/yandex-ads',
+  getParentRoute: () => rootRouteImport,
 } as any)
 const ServicesVideoRoute = ServicesVideoRouteImport.update({
-  id: '/video',
-  path: '/video',
-  getParentRoute: () => ServicesRoute,
+  id: '/services/video',
+  path: '/services/video',
+  getParentRoute: () => rootRouteImport,
 } as any)
 const ServicesUxUiRoute = ServicesUxUiRouteImport.update({
-  id: '/ux-ui',
-  path: '/ux-ui',
-  getParentRoute: () => ServicesRoute,
+  id: '/services/ux-ui',
+  path: '/services/ux-ui',
+  getParentRoute: () => rootRouteImport,
 } as any)
 const ServicesTiktokAdsRoute = ServicesTiktokAdsRouteImport.update({
-  id: '/tiktok-ads',
-  path: '/tiktok-ads',
-  getParentRoute: () => ServicesRoute,
+  id: '/services/tiktok-ads',
+  path: '/services/tiktok-ads',
+  getParentRoute: () => rootRouteImport,
 } as any)
 const ServicesSmmRoute = ServicesSmmRouteImport.update({
-  id: '/smm',
-  path: '/smm',
-  getParentRoute: () => ServicesRoute,
+  id: '/services/smm',
+  path: '/services/smm',
+  getParentRoute: () => rootRouteImport,
 } as any)
 const ServicesSeoRoute = ServicesSeoRouteImport.update({
-  id: '/seo',
-  path: '/seo',
-  getParentRoute: () => ServicesRoute,
+  id: '/services/seo',
+  path: '/services/seo',
+  getParentRoute: () => rootRouteImport,
 } as any)
 const ServicesInstagramAdsRoute = ServicesInstagramAdsRouteImport.update({
-  id: '/instagram-ads',
-  path: '/instagram-ads',
-  getParentRoute: () => ServicesRoute,
+  id: '/services/instagram-ads',
+  path: '/services/instagram-ads',
+  getParentRoute: () => rootRouteImport,
 } as any)
 const ServicesGoogleAdsRoute = ServicesGoogleAdsRouteImport.update({
   id: '/services/google-ads',
@@ -80,19 +80,19 @@ const ServicesGoogleAdsRoute = ServicesGoogleAdsRouteImport.update({
   getParentRoute: () => rootRouteImport,
 } as any)
 const ServicesComplexRoute = ServicesComplexRouteImport.update({
-  id: '/complex',
-  path: '/complex',
-  getParentRoute: () => ServicesRoute,
+  id: '/services/complex',
+  path: '/services/complex',
+  getParentRoute: () => rootRouteImport,
 } as any)
 const ServicesAuditRoute = ServicesAuditRouteImport.update({
-  id: '/audit',
-  path: '/audit',
-  getParentRoute: () => ServicesRoute,
+  id: '/services/audit',
+  path: '/services/audit',
+  getParentRoute: () => rootRouteImport,
 } as any)
 const ServicesAnalyticsRoute = ServicesAnalyticsRouteImport.update({
-  id: '/analytics',
-  path: '/analytics',
-  getParentRoute: () => ServicesRoute,
+  id: '/services/analytics',
+  path: '/services/analytics',
+  getParentRoute: () => rootRouteImport,
 } as any)
 
 export interface FileRoutesByFullPath {
@@ -198,7 +198,17 @@ export interface FileRouteTypes {
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   ContactRoute: typeof ContactRoute
+  ServicesAnalyticsRoute: typeof ServicesAnalyticsRoute
+  ServicesAuditRoute: typeof ServicesAuditRoute
+  ServicesComplexRoute: typeof ServicesComplexRoute
   ServicesGoogleAdsRoute: typeof ServicesGoogleAdsRoute
+  ServicesInstagramAdsRoute: typeof ServicesInstagramAdsRoute
+  ServicesSeoRoute: typeof ServicesSeoRoute
+  ServicesSmmRoute: typeof ServicesSmmRoute
+  ServicesTiktokAdsRoute: typeof ServicesTiktokAdsRoute
+  ServicesUxUiRoute: typeof ServicesUxUiRoute
+  ServicesVideoRoute: typeof ServicesVideoRoute
+  ServicesYandexAdsRoute: typeof ServicesYandexAdsRoute
   ServicesIndexRoute: typeof ServicesIndexRoute
 }
 
@@ -227,52 +237,52 @@ declare module '@tanstack/react-router' {
     }
     '/services/yandex-ads': {
       id: '/services/yandex-ads'
-      path: '/yandex-ads'
+      path: '/services/yandex-ads'
       fullPath: '/services/yandex-ads'
       preLoaderRoute: typeof ServicesYandexAdsRouteImport
-      parentRoute: typeof ServicesRoute
+      parentRoute: typeof rootRouteImport
     }
     '/services/video': {
       id: '/services/video'
-      path: '/video'
+      path: '/services/video'
       fullPath: '/services/video'
       preLoaderRoute: typeof ServicesVideoRouteImport
-      parentRoute: typeof ServicesRoute
+      parentRoute: typeof rootRouteImport
     }
     '/services/ux-ui': {
       id: '/services/ux-ui'
-      path: '/ux-ui'
+      path: '/services/ux-ui'
       fullPath: '/services/ux-ui'
       preLoaderRoute: typeof ServicesUxUiRouteImport
-      parentRoute: typeof ServicesRoute
+      parentRoute: typeof rootRouteImport
     }
     '/services/tiktok-ads': {
       id: '/services/tiktok-ads'
-      path: '/tiktok-ads'
+      path: '/services/tiktok-ads'
       fullPath: '/services/tiktok-ads'
       preLoaderRoute: typeof ServicesTiktokAdsRouteImport
-      parentRoute: typeof ServicesRoute
+      parentRoute: typeof rootRouteImport
     }
     '/services/smm': {
       id: '/services/smm'
-      path: '/smm'
+      path: '/services/smm'
       fullPath: '/services/smm'
       preLoaderRoute: typeof ServicesSmmRouteImport
-      parentRoute: typeof ServicesRoute
+      parentRoute: typeof rootRouteImport
     }
     '/services/seo': {
       id: '/services/seo'
-      path: '/seo'
+      path: '/services/seo'
       fullPath: '/services/seo'
       preLoaderRoute: typeof ServicesSeoRouteImport
-      parentRoute: typeof ServicesRoute
+      parentRoute: typeof rootRouteImport
     }
     '/services/instagram-ads': {
       id: '/services/instagram-ads'
-      path: '/instagram-ads'
+      path: '/services/instagram-ads'
       fullPath: '/services/instagram-ads'
       preLoaderRoute: typeof ServicesInstagramAdsRouteImport
-      parentRoute: typeof ServicesRoute
+      parentRoute: typeof rootRouteImport
     }
     '/services/google-ads': {
       id: '/services/google-ads'
@@ -283,24 +293,24 @@ declare module '@tanstack/react-router' {
     }
     '/services/complex': {
       id: '/services/complex'
-      path: '/complex'
+      path: '/services/complex'
       fullPath: '/services/complex'
       preLoaderRoute: typeof ServicesComplexRouteImport
-      parentRoute: typeof ServicesRoute
+      parentRoute: typeof rootRouteImport
     }
     '/services/audit': {
       id: '/services/audit'
-      path: '/audit'
+      path: '/services/audit'
       fullPath: '/services/audit'
       preLoaderRoute: typeof ServicesAuditRouteImport
-      parentRoute: typeof ServicesRoute
+      parentRoute: typeof rootRouteImport
     }
     '/services/analytics': {
       id: '/services/analytics'
-      path: '/analytics'
+      path: '/services/analytics'
       fullPath: '/services/analytics'
       preLoaderRoute: typeof ServicesAnalyticsRouteImport
-      parentRoute: typeof ServicesRoute
+      parentRoute: typeof rootRouteImport
     }
   }
 }
@@ -308,7 +318,17 @@ declare module '@tanstack/react-router' {
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   ContactRoute: ContactRoute,
+  ServicesAnalyticsRoute: ServicesAnalyticsRoute,
+  ServicesAuditRoute: ServicesAuditRoute,
+  ServicesComplexRoute: ServicesComplexRoute,
   ServicesGoogleAdsRoute: ServicesGoogleAdsRoute,
+  ServicesInstagramAdsRoute: ServicesInstagramAdsRoute,
+  ServicesSeoRoute: ServicesSeoRoute,
+  ServicesSmmRoute: ServicesSmmRoute,
+  ServicesTiktokAdsRoute: ServicesTiktokAdsRoute,
+  ServicesUxUiRoute: ServicesUxUiRoute,
+  ServicesVideoRoute: ServicesVideoRoute,
+  ServicesYandexAdsRoute: ServicesYandexAdsRoute,
   ServicesIndexRoute: ServicesIndexRoute,
 }
 export const routeTree = rootRouteImport
