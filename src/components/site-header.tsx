@@ -193,6 +193,15 @@ export function SiteHeader() {
                 </li>
                 <li>
                   <Link
+                    to="/team"
+                    onClick={() => setMobileOpen(false)}
+                    className="block rounded-lg px-3 py-3 font-display text-2xl font-medium tracking-tight text-foreground hover:bg-secondary [&.active]:bg-secondary"
+                  >
+                    Команда
+                  </Link>
+                </li>
+                <li>
+                  <Link
                     to="/contact"
                     onClick={() => setMobileOpen(false)}
                     className="block rounded-lg px-3 py-3 font-display text-2xl font-medium tracking-tight text-foreground hover:bg-secondary [&.active]:bg-secondary"
