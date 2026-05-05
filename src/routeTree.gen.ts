@@ -13,6 +13,7 @@ import { Route as ContactRouteImport } from './routes/contact'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as ServicesIndexRouteImport } from './routes/services.index'
 import { Route as ServicesYandexAdsRouteImport } from './routes/services.yandex-ads'
+import { Route as ServicesWebDevRouteImport } from './routes/services.web-dev'
 import { Route as ServicesVideoRouteImport } from './routes/services.video'
 import { Route as ServicesUxUiRouteImport } from './routes/services.ux-ui'
 import { Route as ServicesTiktokAdsRouteImport } from './routes/services.tiktok-ads'
@@ -42,6 +43,11 @@ const ServicesIndexRoute = ServicesIndexRouteImport.update({
 const ServicesYandexAdsRoute = ServicesYandexAdsRouteImport.update({
   id: '/services/yandex-ads',
   path: '/services/yandex-ads',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ServicesWebDevRoute = ServicesWebDevRouteImport.update({
+  id: '/services/web-dev',
+  path: '/services/web-dev',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ServicesVideoRoute = ServicesVideoRouteImport.update({
@@ -108,6 +114,7 @@ export interface FileRoutesByFullPath {
   '/services/tiktok-ads': typeof ServicesTiktokAdsRoute
   '/services/ux-ui': typeof ServicesUxUiRoute
   '/services/video': typeof ServicesVideoRoute
+  '/services/web-dev': typeof ServicesWebDevRoute
   '/services/yandex-ads': typeof ServicesYandexAdsRoute
   '/services/': typeof ServicesIndexRoute
 }
@@ -124,6 +131,7 @@ export interface FileRoutesByTo {
   '/services/tiktok-ads': typeof ServicesTiktokAdsRoute
   '/services/ux-ui': typeof ServicesUxUiRoute
   '/services/video': typeof ServicesVideoRoute
+  '/services/web-dev': typeof ServicesWebDevRoute
   '/services/yandex-ads': typeof ServicesYandexAdsRoute
   '/services': typeof ServicesIndexRoute
 }
@@ -141,6 +149,7 @@ export interface FileRoutesById {
   '/services/tiktok-ads': typeof ServicesTiktokAdsRoute
   '/services/ux-ui': typeof ServicesUxUiRoute
   '/services/video': typeof ServicesVideoRoute
+  '/services/web-dev': typeof ServicesWebDevRoute
   '/services/yandex-ads': typeof ServicesYandexAdsRoute
   '/services/': typeof ServicesIndexRoute
 }
@@ -159,6 +168,7 @@ export interface FileRouteTypes {
     | '/services/tiktok-ads'
     | '/services/ux-ui'
     | '/services/video'
+    | '/services/web-dev'
     | '/services/yandex-ads'
     | '/services/'
   fileRoutesByTo: FileRoutesByTo
@@ -175,6 +185,7 @@ export interface FileRouteTypes {
     | '/services/tiktok-ads'
     | '/services/ux-ui'
     | '/services/video'
+    | '/services/web-dev'
     | '/services/yandex-ads'
     | '/services'
   id:
@@ -191,6 +202,7 @@ export interface FileRouteTypes {
     | '/services/tiktok-ads'
     | '/services/ux-ui'
     | '/services/video'
+    | '/services/web-dev'
     | '/services/yandex-ads'
     | '/services/'
   fileRoutesById: FileRoutesById
@@ -208,6 +220,7 @@ export interface RootRouteChildren {
   ServicesTiktokAdsRoute: typeof ServicesTiktokAdsRoute
   ServicesUxUiRoute: typeof ServicesUxUiRoute
   ServicesVideoRoute: typeof ServicesVideoRoute
+  ServicesWebDevRoute: typeof ServicesWebDevRoute
   ServicesYandexAdsRoute: typeof ServicesYandexAdsRoute
   ServicesIndexRoute: typeof ServicesIndexRoute
 }
@@ -240,6 +253,13 @@ declare module '@tanstack/react-router' {
       path: '/services/yandex-ads'
       fullPath: '/services/yandex-ads'
       preLoaderRoute: typeof ServicesYandexAdsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/services/web-dev': {
+      id: '/services/web-dev'
+      path: '/services/web-dev'
+      fullPath: '/services/web-dev'
+      preLoaderRoute: typeof ServicesWebDevRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/services/video': {
@@ -328,6 +348,7 @@ const rootRouteChildren: RootRouteChildren = {
   ServicesTiktokAdsRoute: ServicesTiktokAdsRoute,
   ServicesUxUiRoute: ServicesUxUiRoute,
   ServicesVideoRoute: ServicesVideoRoute,
+  ServicesWebDevRoute: ServicesWebDevRoute,
   ServicesYandexAdsRoute: ServicesYandexAdsRoute,
   ServicesIndexRoute: ServicesIndexRoute,
 }
