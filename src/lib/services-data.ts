@@ -1,4 +1,10 @@
-export type ServiceCategory = "marketing" | "advertising" | "analytics" | "content" | "design";
+export type ServiceCategory =
+  | "marketing"
+  | "advertising"
+  | "analytics"
+  | "content"
+  | "design"
+  | "development";
 
 export interface ServiceItem {
   /** URL slug — must match the route file name in src/routes/services.<slug>.tsx */
@@ -13,7 +19,9 @@ export interface ServiceItem {
     | "audit"
     | "smm"
     | "video"
-    | "ux-ui";
+    | "ux-ui"
+    | "web-dev"
+    | "tech-spec";
   /** Short title used in menus and grids */
   title: string;
   /** One-line product packaging — used as a card subtitle */
@@ -467,6 +475,70 @@ export const SERVICES: ServiceItem[] = [
         "UX-исследование, проектирование, UI и ТЗ для сложных web-приложений и SaaS. Работаем с продуктом.",
     },
   },
+  {
+    slug: "web-dev",
+    title: "Разработка сайта",
+    tagline: "Сайты, которые решают бизнес-задачи: заявки, лояльность, узнаваемость.",
+    category: "development",
+    price: "от 100 000 тг",
+    intro:
+      "Разрабатываю сайты, которые работают на бизнес: привлекают клиентов, повышают лояльность и узнаваемость. Делаю удобно и понятно для пользователя, на современных технологиях, с базовой SEO-оптимизацией под старт.",
+    includes: [
+      "UX/UI дизайн под задачу",
+      "Адаптивная вёрстка (mobile-first)",
+      "Современный стек: React, TypeScript, Tailwind",
+      "Базовая SEO-оптимизация (meta, OG, sitemap)",
+      "Подключение аналитики и форм",
+      "Хостинг и домен под ключ",
+    ],
+    process: [
+      { step: "01", title: "Бриф", desc: "Цели, аудитория, конкуренты, референсы." },
+      { step: "02", title: "Прототип и дизайн", desc: "Структура, ключевые экраны, финальный визуал." },
+      { step: "03", title: "Разработка", desc: "Вёрстка, интеграции, формы, аналитика." },
+      { step: "04", title: "Запуск", desc: "Тесты, домен, хостинг, передача доступов." },
+    ],
+    faq: [
+      { q: "Сколько занимает разработка?", a: "Лендинг — 2–3 недели. Корпоративный сайт — 4–6 недель. Зависит от объёма и согласований." },
+      { q: "На чём делаете сайты?", a: "React + TypeScript + Tailwind. Современный стек, который удобно поддерживать и развивать." },
+    ],
+    meta: {
+      title: "Разработка сайтов под бизнес-задачи — ARYN TEAM",
+      description:
+        "Разработка сайтов на React/TypeScript: дизайн, вёрстка, базовое SEO, аналитика. От 100 000 тг.",
+    },
+  },
+  {
+    slug: "tech-spec",
+    title: "Разработка технического задания",
+    tagline: "ТЗ для сложных проектов — документация, по которой можно строить.",
+    category: "development",
+    price: "от 200 000 тг",
+    intro:
+      "Разрабатываю техническое задание, понятное для разработчиков. Продумываю проект, упаковываю ваши идеи, предлагаю варианты, прорабатываю UX/UI и архитектуру. На выходе — полная документация, по которой ваша команда сможет реализовать сложный продукт.",
+    includes: [
+      "Discovery и интервью со стейкхолдерами",
+      "Карта пользовательских сценариев",
+      "UX/UI прототипы в Figma",
+      "Архитектура системы и схема БД",
+      "Разбивка на этапы и оценка сроков",
+      "Полное ТЗ в формате PDF + Notion",
+    ],
+    process: [
+      { step: "01", title: "Discovery", desc: "Изучаем бизнес, пользователей, технические ограничения." },
+      { step: "02", title: "Сценарии и UX", desc: "User flows, wireframes, интерактивный прототип." },
+      { step: "03", title: "Архитектура", desc: "Стек, схема данных, интеграции, нефункциональные требования." },
+      { step: "04", title: "Документация", desc: "Финальное ТЗ, разбитое на эпики и задачи для команды." },
+    ],
+    faq: [
+      { q: "Подойдёт ТЗ для тендера?", a: "Да, документ содержит функциональные и нефункциональные требования, по которым подрядчики могут оценить проект." },
+      { q: "Можете сопровождать разработку?", a: "Да, выступаем product-менеджером на стороне заказчика и контролируем соответствие ТЗ." },
+    ],
+    meta: {
+      title: "Разработка технического задания для сложных проектов — ARYN TEAM",
+      description:
+        "ТЗ для разработчиков: Discovery, UX/UI, архитектура, оценка. Полная документация по проекту. От 200 000 тг.",
+    },
+  },
 ];
 
 export const SERVICE_CATEGORIES: { id: ServiceCategory; label: string }[] = [
@@ -475,6 +547,7 @@ export const SERVICE_CATEGORIES: { id: ServiceCategory; label: string }[] = [
   { id: "analytics", label: "Аналитика и аудит" },
   { id: "content", label: "Контент" },
   { id: "design", label: "Дизайн" },
+  { id: "development", label: "Разработка" },
 ];
 
 export function getServiceBySlug(slug: ServiceItem["slug"]) {
