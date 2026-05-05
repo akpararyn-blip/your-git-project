@@ -9,6 +9,7 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as TeamRouteImport } from './routes/team'
 import { Route as ContactRouteImport } from './routes/contact'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as ServicesIndexRouteImport } from './routes/services.index'
@@ -26,6 +27,11 @@ import { Route as ServicesComplexRouteImport } from './routes/services.complex'
 import { Route as ServicesAuditRouteImport } from './routes/services.audit'
 import { Route as ServicesAnalyticsRouteImport } from './routes/services.analytics'
 
+const TeamRoute = TeamRouteImport.update({
+  id: '/team',
+  path: '/team',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ContactRoute = ContactRouteImport.update({
   id: '/contact',
   path: '/contact',
@@ -110,6 +116,7 @@ const ServicesAnalyticsRoute = ServicesAnalyticsRouteImport.update({
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/contact': typeof ContactRoute
+  '/team': typeof TeamRoute
   '/services/analytics': typeof ServicesAnalyticsRoute
   '/services/audit': typeof ServicesAuditRoute
   '/services/complex': typeof ServicesComplexRoute
@@ -128,6 +135,7 @@ export interface FileRoutesByFullPath {
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/contact': typeof ContactRoute
+  '/team': typeof TeamRoute
   '/services/analytics': typeof ServicesAnalyticsRoute
   '/services/audit': typeof ServicesAuditRoute
   '/services/complex': typeof ServicesComplexRoute
@@ -147,6 +155,7 @@ export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/contact': typeof ContactRoute
+  '/team': typeof TeamRoute
   '/services/analytics': typeof ServicesAnalyticsRoute
   '/services/audit': typeof ServicesAuditRoute
   '/services/complex': typeof ServicesComplexRoute
@@ -167,6 +176,7 @@ export interface FileRouteTypes {
   fullPaths:
     | '/'
     | '/contact'
+    | '/team'
     | '/services/analytics'
     | '/services/audit'
     | '/services/complex'
@@ -185,6 +195,7 @@ export interface FileRouteTypes {
   to:
     | '/'
     | '/contact'
+    | '/team'
     | '/services/analytics'
     | '/services/audit'
     | '/services/complex'
@@ -203,6 +214,7 @@ export interface FileRouteTypes {
     | '__root__'
     | '/'
     | '/contact'
+    | '/team'
     | '/services/analytics'
     | '/services/audit'
     | '/services/complex'
@@ -222,6 +234,7 @@ export interface FileRouteTypes {
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   ContactRoute: typeof ContactRoute
+  TeamRoute: typeof TeamRoute
   ServicesAnalyticsRoute: typeof ServicesAnalyticsRoute
   ServicesAuditRoute: typeof ServicesAuditRoute
   ServicesComplexRoute: typeof ServicesComplexRoute
@@ -240,6 +253,13 @@ export interface RootRouteChildren {
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/team': {
+      id: '/team'
+      path: '/team'
+      fullPath: '/team'
+      preLoaderRoute: typeof TeamRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/contact': {
       id: '/contact'
       path: '/contact'
@@ -358,6 +378,7 @@ declare module '@tanstack/react-router' {
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   ContactRoute: ContactRoute,
+  TeamRoute: TeamRoute,
   ServicesAnalyticsRoute: ServicesAnalyticsRoute,
   ServicesAuditRoute: ServicesAuditRoute,
   ServicesComplexRoute: ServicesComplexRoute,
