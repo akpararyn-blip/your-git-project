@@ -1,4 +1,10 @@
-export type ServiceCategory = "marketing" | "advertising" | "analytics" | "content" | "design";
+export type ServiceCategory =
+  | "marketing"
+  | "advertising"
+  | "analytics"
+  | "content"
+  | "design"
+  | "development";
 
 export interface ServiceItem {
   /** URL slug — must match the route file name in src/routes/services.<slug>.tsx */
@@ -13,7 +19,9 @@ export interface ServiceItem {
     | "audit"
     | "smm"
     | "video"
-    | "ux-ui";
+    | "ux-ui"
+    | "web-dev"
+    | "tech-spec";
   /** Short title used in menus and grids */
   title: string;
   /** One-line product packaging — used as a card subtitle */
