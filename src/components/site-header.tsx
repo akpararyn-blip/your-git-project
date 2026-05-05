@@ -108,6 +108,12 @@ export function SiteHeader() {
           </DropdownMenu>
 
           <Link
+            to="/team"
+            className="text-muted-foreground transition-colors hover:text-foreground [&.active]:text-foreground"
+          >
+            Команда
+          </Link>
+          <Link
             to="/contact"
             className="text-muted-foreground transition-colors hover:text-foreground [&.active]:text-foreground"
           >
