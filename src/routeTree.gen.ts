@@ -17,6 +17,7 @@ import { Route as ServicesWebDevRouteImport } from './routes/services.web-dev'
 import { Route as ServicesVideoRouteImport } from './routes/services.video'
 import { Route as ServicesUxUiRouteImport } from './routes/services.ux-ui'
 import { Route as ServicesTiktokAdsRouteImport } from './routes/services.tiktok-ads'
+import { Route as ServicesTechSpecRouteImport } from './routes/services.tech-spec'
 import { Route as ServicesSmmRouteImport } from './routes/services.smm'
 import { Route as ServicesSeoRouteImport } from './routes/services.seo'
 import { Route as ServicesInstagramAdsRouteImport } from './routes/services.instagram-ads'
@@ -65,6 +66,11 @@ const ServicesTiktokAdsRoute = ServicesTiktokAdsRouteImport.update({
   path: '/services/tiktok-ads',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ServicesTechSpecRoute = ServicesTechSpecRouteImport.update({
+  id: '/services/tech-spec',
+  path: '/services/tech-spec',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ServicesSmmRoute = ServicesSmmRouteImport.update({
   id: '/services/smm',
   path: '/services/smm',
@@ -111,6 +117,7 @@ export interface FileRoutesByFullPath {
   '/services/instagram-ads': typeof ServicesInstagramAdsRoute
   '/services/seo': typeof ServicesSeoRoute
   '/services/smm': typeof ServicesSmmRoute
+  '/services/tech-spec': typeof ServicesTechSpecRoute
   '/services/tiktok-ads': typeof ServicesTiktokAdsRoute
   '/services/ux-ui': typeof ServicesUxUiRoute
   '/services/video': typeof ServicesVideoRoute
@@ -128,6 +135,7 @@ export interface FileRoutesByTo {
   '/services/instagram-ads': typeof ServicesInstagramAdsRoute
   '/services/seo': typeof ServicesSeoRoute
   '/services/smm': typeof ServicesSmmRoute
+  '/services/tech-spec': typeof ServicesTechSpecRoute
   '/services/tiktok-ads': typeof ServicesTiktokAdsRoute
   '/services/ux-ui': typeof ServicesUxUiRoute
   '/services/video': typeof ServicesVideoRoute
@@ -146,6 +154,7 @@ export interface FileRoutesById {
   '/services/instagram-ads': typeof ServicesInstagramAdsRoute
   '/services/seo': typeof ServicesSeoRoute
   '/services/smm': typeof ServicesSmmRoute
+  '/services/tech-spec': typeof ServicesTechSpecRoute
   '/services/tiktok-ads': typeof ServicesTiktokAdsRoute
   '/services/ux-ui': typeof ServicesUxUiRoute
   '/services/video': typeof ServicesVideoRoute
@@ -165,6 +174,7 @@ export interface FileRouteTypes {
     | '/services/instagram-ads'
     | '/services/seo'
     | '/services/smm'
+    | '/services/tech-spec'
     | '/services/tiktok-ads'
     | '/services/ux-ui'
     | '/services/video'
@@ -182,6 +192,7 @@ export interface FileRouteTypes {
     | '/services/instagram-ads'
     | '/services/seo'
     | '/services/smm'
+    | '/services/tech-spec'
     | '/services/tiktok-ads'
     | '/services/ux-ui'
     | '/services/video'
@@ -199,6 +210,7 @@ export interface FileRouteTypes {
     | '/services/instagram-ads'
     | '/services/seo'
     | '/services/smm'
+    | '/services/tech-spec'
     | '/services/tiktok-ads'
     | '/services/ux-ui'
     | '/services/video'
@@ -217,6 +229,7 @@ export interface RootRouteChildren {
   ServicesInstagramAdsRoute: typeof ServicesInstagramAdsRoute
   ServicesSeoRoute: typeof ServicesSeoRoute
   ServicesSmmRoute: typeof ServicesSmmRoute
+  ServicesTechSpecRoute: typeof ServicesTechSpecRoute
   ServicesTiktokAdsRoute: typeof ServicesTiktokAdsRoute
   ServicesUxUiRoute: typeof ServicesUxUiRoute
   ServicesVideoRoute: typeof ServicesVideoRoute
@@ -283,6 +296,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ServicesTiktokAdsRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/services/tech-spec': {
+      id: '/services/tech-spec'
+      path: '/services/tech-spec'
+      fullPath: '/services/tech-spec'
+      preLoaderRoute: typeof ServicesTechSpecRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/services/smm': {
       id: '/services/smm'
       path: '/services/smm'
@@ -345,6 +365,7 @@ const rootRouteChildren: RootRouteChildren = {
   ServicesInstagramAdsRoute: ServicesInstagramAdsRoute,
   ServicesSeoRoute: ServicesSeoRoute,
   ServicesSmmRoute: ServicesSmmRoute,
+  ServicesTechSpecRoute: ServicesTechSpecRoute,
   ServicesTiktokAdsRoute: ServicesTiktokAdsRoute,
   ServicesUxUiRoute: ServicesUxUiRoute,
   ServicesVideoRoute: ServicesVideoRoute,
