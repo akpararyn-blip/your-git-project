@@ -42,12 +42,9 @@ function ServicesPage() {
             / Услуги
           </p>
           <h1 className="mt-6 max-w-4xl font-display text-5xl font-medium leading-[1] tracking-tight text-balance md:text-7xl lg:text-8xl">
-            Performance-маркетинг. <em className="not-italic">Один</em> измеримый результат.
+            Все услуги ABP Digital.
           </h1>
-          <p className="mt-8 max-w-2xl text-lg text-muted-foreground md:text-xl">
-            Маркетинг — основа всего, что мы делаем. Реклама, аналитика, контент и дизайн —
-            услуги, которые усиливают рост выручки.
-          </p>
+          
         </div>
       </section>
 
@@ -84,7 +81,7 @@ function ServicesPage() {
                     </span>
                   </div>
                   <p className="mt-3 text-sm text-muted-foreground">
-                    Финальная смета — после короткого брифа.
+                    Финальная смета — после встречи и анализа ситуации в вашей компании.
                   </p>
                 </div>
                 <Link
@@ -120,7 +117,7 @@ function ServicesPage() {
                 <p className="max-w-md text-muted-foreground">
                   {isAds
                     ? "Реклама и трафик — каналы, которые приносят заявки сегодня."
-                    : "Услуги, которые усиливают маркетинг и работают на долгосрочный рост."}
+                    : "Дополнительные услуги"}
                 </p>
               </div>
 

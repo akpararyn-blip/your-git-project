@@ -279,12 +279,7 @@ function HomePage() {
               </div>
             </div>
 
-            <div
-              aria-hidden
-              className="pointer-events-none absolute -bottom-20 -right-10 font-display text-[20rem] font-medium leading-none text-background/5"
-            >
-              ↗
-            </div>
+            
           </div>
         </div>
       </section>

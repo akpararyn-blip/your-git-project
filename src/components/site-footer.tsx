@@ -11,8 +11,7 @@ export function SiteFooter() {
               <img src={logo} alt="ABP DIGITAL" className="h-10 w-auto" loading="lazy" />
             </Link>
             <p className="mt-4 max-w-sm text-sm text-muted-foreground">
-              Снимаем оригинальный контент, который смотрится дорого. Performance-маркетинг
-              и видеопродакшен с прозрачной аналитикой.
+              ABP DIGITAL AGENCY — агентство performance-маркетинга, разработки сайтов и видеопродакшена в Казахстане. Реклама в Google Ads, Яндекс Директ, Meta Instagram Facebook, TikTok, разработка сайтов, сквозная аналитика, SEO, видеоконтент и UX/UI. 
             </p>
           </div>
 

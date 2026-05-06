@@ -80,10 +80,10 @@ const CASES: CaseStudy[] = [
 ];
 
 const STACK = [
-  { t: "React + TypeScript", d: "Современная типобезопасная разработка." },
-  { t: "Tailwind CSS", d: "Гибкая дизайн-система и быстрый рендер." },
-  { t: "TanStack / Next.js", d: "SSR/SSG для скорости и SEO." },
-  { t: "Headless CMS", d: "Sanity, Strapi — удобное управление контентом." },
+  { t: "React + TypeScript", d: "Современная и отказоустойчивая архитектура." },
+  { t: "Tilda Publishing", d: "Запуск и доработка проектов в сжатые сроки на популярной платформе конструкторе. Создание уникального дизайна через Zero Block." },
+  { t: "Wordpress", d: "Универсальная CMS с удобной админкой. Идеально подходит, если ваша команда уже привыкла работать с этой платформой." },
+  
 ];
 
 const FAQ = [
@@ -122,7 +122,7 @@ function WebDevPage() {
                 бизнеса.
               </h1>
               <p className="mt-6 max-w-2xl text-lg text-muted-foreground md:text-xl">
-                Привлекаю клиентов, повышаю лояльность и узнаваемость. Удобно и понятно
+                Привлечение клиентов, повышение лояльности и узнаваемости. Удобно и понятно
                 для пользователя, на современных технологиях, с базовой SEO.
               </p>
 
@@ -170,7 +170,7 @@ function WebDevPage() {
         <div className="mx-auto max-w-7xl px-6 py-20 lg:px-10 lg:py-24">
           <p className="text-xs font-mono uppercase tracking-widest text-muted-foreground">/ Стек</p>
           <h2 className="mt-6 max-w-3xl font-display text-3xl font-medium leading-tight tracking-tight md:text-5xl">
-            На чём разрабатываю
+            <em className="not-italic text-accent">Технологии</em> для разработки сайтов, которые мы используем.
           </h2>
           <div className="mt-12 grid gap-px overflow-hidden rounded-2xl border border-hairline bg-hairline md:grid-cols-2 lg:grid-cols-4">
             {STACK.map((s) => (
@@ -188,7 +188,7 @@ function WebDevPage() {
         <div className="mx-auto max-w-7xl px-6 py-20 lg:px-10 lg:py-28">
           <p className="text-xs font-mono uppercase tracking-widest text-muted-foreground">/ Кейсы</p>
           <h2 className="mt-6 max-w-3xl font-display text-3xl font-medium leading-tight tracking-tight md:text-5xl">
-            Проекты, которые я разработал
+            Проекты, которые разработаны
           </h2>
 
           <div className="mt-12 grid gap-8 md:grid-cols-2 lg:grid-cols-3">

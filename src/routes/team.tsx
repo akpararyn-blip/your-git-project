@@ -14,7 +14,7 @@ export const Route = createFileRoute("/team")({
       {
         name: "description",
         content:
-          "Команда ABP DIGITAL: маркетологи, дизайнеры, разработчики и продакшн. Каждый отвечает за своё направление и общий результат.",
+          "Команда ABP DIGITAL: маркетологи, дизайнеры, разработчики, digital-специалисты и продакшн. Каждый отвечает за своё направление и общий результат.",
       },
       { property: "og:title", content: "Команда ABP DIGITAL" },
       {
@@ -36,20 +36,20 @@ type Member = {
 const TEAM: Member[] = [
   {
     name: "Павел Пимурзин",
-    role: "Founder · Head of Marketing",
+    role: "CO-Founder · Head of Marketing",
     bio: "10+ лет в performance-маркетинге. Стратегия и управление проектами.",
     imageUrl: pavelImg,
   },
   {
     name: "Бахыт Умбеталиев",
     role: "CO-Founder · Head of Product & Creative",
-    bio: "12+ лет в рекламе и маркетинге",
+    bio: "12+ лет в запуске и развитии продуктов. 5 лет опыта в роли CMO. Запуск и масштабирование B2B / B2C продуктов",
     imageUrl: bakhytImg,
   },
   {
     name: "Акпар Арын",
-    role: "Digital Strategist",
-    bio: "Digital-стратег. Аналитика, оптимизация, масштабирование.",
+    role: "Digital specialist",
+    bio: "6+ лет в маркетинге. Digital-специалист. Аналитика, оптимизация, масштабирование.",
     imageUrl: akparImg,
   },
   {
@@ -89,7 +89,7 @@ function TeamPage() {
             <em className="not-italic text-accent">отвечает за результат</em>
           </h1>
           <p className="mt-6 max-w-2xl text-lg text-muted-foreground md:text-xl">
-            Маркетологи, дизайнеры, разработчики и продакшн. Каждый — эксперт в своём
+            Маркетологи, дизайнеры, разработчики, digital-специалисты и продакшн. Каждый — эксперт в своём
             направлении. Работаем как единая команда над вашим проектом.
           </p>
         </div>
