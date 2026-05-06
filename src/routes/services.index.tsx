@@ -9,7 +9,7 @@ import {
 export const Route = createFileRoute("/services/")({
   head: () => ({
     meta: [
-      { title: "Услуги — ARYN TEAM · Performance-маркетинг под ключ" },
+      { title: "Услуги — ABP DIGITAL · Performance-маркетинг под ключ" },
       {
         name: "description",
         content:
@@ -17,7 +17,7 @@ export const Route = createFileRoute("/services/")({
       },
       {
         property: "og:title",
-        content: "Услуги — ARYN TEAM · Performance-маркетинг под ключ",
+        content: "Услуги — ABP DIGITAL · Performance-маркетинг под ключ",
       },
       {
         property: "og:description",

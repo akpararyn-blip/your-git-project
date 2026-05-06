@@ -86,7 +86,7 @@
   --muted-foreground: oklch(0.45 0.012 250);
 
   /* Accent = electric lime — performance / signal */
-  --accent: oklch(0.92 0.18 125);
+  --accent: oklch(72.261% 0.14777 250.609);
   --accent-foreground: oklch(0.18 0.01 250);
 
   --destructive: oklch(0.55 0.22 27);

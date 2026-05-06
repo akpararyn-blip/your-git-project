@@ -24,10 +24,10 @@ export function SiteHeader() {
     <header className="sticky top-0 z-40 border-b border-hairline/70 bg-background/80 backdrop-blur-md">
       <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-6 lg:px-10">
         {/* Logo */}
-        <Link to="/" className="flex items-center" aria-label="ARYN TEAM — на главную">
+        <Link to="/" className="flex items-center" aria-label="ABP DIGITAL — на главную">
           <img
             src={logo}
-            alt="ARYN TEAM"
+            alt="ABP DIGITAL"
             className="h-8 w-auto md:h-9"
             loading="eager"
             decoding="async"
@@ -153,12 +153,12 @@ export function SiteHeader() {
           >
             <SheetTitle className="sr-only">Меню</SheetTitle>
             <SheetDescription className="sr-only">
-              Навигация по сайту, услуги и контактные данные ARYN TEAM
+              Навигация по сайту, услуги и контактные данные ABP DIGITAL
             </SheetDescription>
 
             {/* Mobile header */}
             <div className="flex items-center justify-between border-b border-hairline px-6 py-4">
-              <img src={logo} alt="ARYN TEAM" className="h-8 w-auto" />
+              <img src={logo} alt="ABP DIGITAL" className="h-8 w-auto" />
               <button
                 type="button"
                 onClick={() => setMobileOpen(false)}

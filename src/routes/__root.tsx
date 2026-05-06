@@ -30,11 +30,11 @@ function NotFoundComponent() {
 export const Route = createRootRoute({
   head: () => ({
     meta: [
-      { title: "ARYN TEAM — Performance-маркетинг и видеопродакшен" },
+      { title: "ABP DIGITAL — Performance-маркетинг и видеопродакшен" },
       {
         name: "description",
         content:
-          "ARYN TEAM — агентство performance-маркетинга и видеопродакшена в Алматы. Прозрачная аналитика, измеримый рост.",
+          "ABP DIGITAL — агентство performance-маркетинга и видеопродакшена в Алматы. Прозрачная аналитика, измеримый рост.",
       },
     ],
   }),

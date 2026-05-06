@@ -5,13 +5,13 @@ import { SERVICES } from "@/lib/services-data";
 export const Route = createFileRoute("/services/complex")({
   head: () => ({
     meta: [
-      { title: "Комплексный маркетинг под ключ — отдел маркетинга на аутсорсе | ARYN TEAM" },
+      { title: "Комплексный маркетинг под ключ — отдел маркетинга на аутсорсе | ABP DIGITAL" },
       {
         name: "description",
         content:
           "Полноценный отдел маркетинга на аутсорсе: стратег, медиабайер, аналитик, дизайнер. Все каналы, аналитика и креативы — один подрядчик за весь рост.",
       },
-      { property: "og:title", content: "Комплексный маркетинг под ключ — ARYN TEAM" },
+      { property: "og:title", content: "Комплексный маркетинг под ключ — ABP DIGITAL" },
       {
         property: "og:description",
         content: "Один контракт вместо пяти подрядчиков. Стратегия, реклама, аналитика, креативы.",

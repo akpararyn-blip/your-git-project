@@ -5,13 +5,13 @@ import { SERVICES } from "@/lib/services-data";
 export const Route = createFileRoute("/services/smm")({
   head: () => ({
     meta: [
-      { title: "SMM — ведение Instagram и TikTok под ключ | ARYN TEAM" },
+      { title: "SMM — ведение Instagram и TikTok под ключ | ABP DIGITAL" },
       {
         name: "description",
         content:
           "Полный SMM-цикл: стратегия, контент-план, съёмки Reels, публикации, комьюнити-менеджмент. Дорогой контент, который работает на бренд и продажи. От 150 000 тг/мес.",
       },
-      { property: "og:title", content: "Ведение социальных сетей — ARYN TEAM" },
+      { property: "og:title", content: "Ведение социальных сетей — ABP DIGITAL" },
       { property: "og:description", content: "Контент, который смотрится дорого. Стратегия, съёмки, публикации, комьюнити." },
     ],
   }),

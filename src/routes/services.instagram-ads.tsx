@@ -5,13 +5,13 @@ import { SERVICES } from "@/lib/services-data";
 export const Route = createFileRoute("/services/instagram-ads")({
   head: () => ({
     meta: [
-      { title: "Таргетированная реклама в Instagram — Reels, Stories, лента | ARYN TEAM" },
+      { title: "Таргетированная реклама в Instagram — Reels, Stories, лента | ABP DIGITAL" },
       {
         name: "description",
         content:
           "Таргет в Instagram через Meta Ads: продающие Reels и Stories, точные аудитории, look-alike, ретаргетинг. Считаем CPL и CPA, не охваты. От 75 000 тг/мес.",
       },
-      { property: "og:title", content: "Реклама в Instagram под ключ — ARYN TEAM" },
+      { property: "og:title", content: "Реклама в Instagram под ключ — ABP DIGITAL" },
       { property: "og:description", content: "Креативы + точный таргет + чистая аналитика. Reels, Stories, ремаркетинг." },
     ],
   }),

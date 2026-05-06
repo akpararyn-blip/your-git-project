@@ -6,7 +6,7 @@ export const Route = createFileRoute("/services/analytics")({
     meta: [
       {
         title:
-          "Сквозная аналитика — GA4, Метрика, CRM, дашборды Looker Studio | ARYN TEAM",
+          "Сквозная аналитика — GA4, Метрика, CRM, дашборды Looker Studio | ABP DIGITAL",
       },
       {
         name: "description",
@@ -15,7 +15,7 @@ export const Route = createFileRoute("/services/analytics")({
       },
       {
         property: "og:title",
-        content: "Сквозная аналитика под ключ — ARYN TEAM",
+        content: "Сквозная аналитика под ключ — ABP DIGITAL",
       },
       {
         property: "og:description",

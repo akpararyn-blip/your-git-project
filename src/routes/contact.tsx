@@ -4,13 +4,13 @@ import { ContactForm } from "@/components/contact-form";
 export const Route = createFileRoute("/contact")({
   head: () => ({
     meta: [
-      { title: "Контакты — ARYN TEAM · Алматы" },
+      { title: "Контакты — ABP DIGITAL AGENCY · Алматы" },
       {
         name: "description",
         content:
-          "Свяжитесь с ARYN TEAM: бесплатный аудит рекламы за 30 минут. Алматы, +7 707 484 2108, Telegram @arynbg.",
+          "Свяжитесь с ABP DIGITAL AGENCY: бесплатный аудит рекламы за 30 минут. Алматы, +7 707 484 2108, Telegram @arynbg.",
       },
-      { property: "og:title", content: "Контакты — ARYN TEAM · Алматы" },
+      { property: "og:title", content: "Контакты — ABP DIGITAL · Алматы" },
       {
         property: "og:description",
         content: "Запросите бесплатный аудит ваших рекламных кампаний.",

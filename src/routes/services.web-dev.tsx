@@ -5,13 +5,13 @@ import { ContactDialog } from "@/components/contact-dialog";
 export const Route = createFileRoute("/services/web-dev")({
   head: () => ({
     meta: [
-      { title: "Разработка сайтов под бизнес — React, TypeScript | ARYN TEAM" },
+      { title: "Разработка сайтов под бизнес — React, TypeScript | ABP DIGITAL" },
       {
         name: "description",
         content:
           "Разработка сайтов, которые решают бизнес-задачи: заявки, лояльность, узнаваемость. React + TypeScript + Tailwind, базовая SEO. От 100 000 тг.",
       },
-      { property: "og:title", content: "Разработка сайтов — ARYN TEAM" },
+      { property: "og:title", content: "Разработка сайтов — ABP DIGITAL" },
       {
         property: "og:description",
         content: "Сайты, которые работают на бизнес. Современный стек, базовая SEO, аналитика.",

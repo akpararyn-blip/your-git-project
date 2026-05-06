@@ -1,6 +1,6 @@
 <?php
 /**
- * ARYN TEAM — приём заявок с формы и пересылка в Telegram.
+ * ABP DIGITAL — приём заявок с формы и пересылка в Telegram.
  *
  * POST /api/send-lead.php
  * Body (JSON): { name, phone, company?, email?, budget?, message?, recaptchaToken? }
@@ -126,7 +126,7 @@ function esc(string $s): string {
 }
 
 $lines = [];
-$lines[] = '<b>📝 Новая заявка с сайта ARYN TEAM</b>';
+$lines[] = '<b>📝 Новая заявка с сайта ABP DIGITAL</b>';
 $lines[] = '';
 $lines[] = '<b>Имя:</b> ' . esc($name);
 $lines[] = '<b>Телефон:</b> ' . esc($phone);

@@ -4,13 +4,13 @@ import { ContactDialog } from "@/components/contact-dialog";
 export const Route = createFileRoute("/services/tech-spec")({
   head: () => ({
     meta: [
-      { title: "Разработка технического задания для сложных проектов | ARYN TEAM" },
+      { title: "Разработка технического задания для сложных проектов | ABP DIGITAL" },
       {
         name: "description",
         content:
           "Разработка ТЗ для сложных проектов: Discovery, UX/UI, архитектура, оценка. Полная документация для разработчиков. От 200 000 тг.",
       },
-      { property: "og:title", content: "Разработка ТЗ — ARYN TEAM" },
+      { property: "og:title", content: "Разработка ТЗ — ABP DIGITAL" },
       {
         property: "og:description",
         content: "Полная документация по сложному проекту, по которой можно строить.",

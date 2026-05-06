@@ -1,16 +1,22 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { ContactDialog } from "@/components/contact-dialog";
+import pavelImg from "@/assets/pavel.png";
+import bakhytImg from "@/assets/bakhyt.png";
+import akparImg from "@/assets/akpar.png";
+import alinaImg from "@/assets/alina.png";
+import mayaImg from "@/assets/maya.png";
+import kirillImg from "@/assets/kirill.png";
 
 export const Route = createFileRoute("/team")({
   head: () => ({
     meta: [
-      { title: "Команда — ARYN TEAM" },
+      { title: "Команда — ABP DIGITAL" },
       {
         name: "description",
         content:
-          "Команда ARYN TEAM: маркетологи, дизайнеры, разработчики и продакшн. Каждый отвечает за своё направление и общий результат.",
+          "Команда ABP DIGITAL: маркетологи, дизайнеры, разработчики и продакшн. Каждый отвечает за своё направление и общий результат.",
       },
-      { property: "og:title", content: "Команда ARYN TEAM" },
+      { property: "og:title", content: "Команда ABP DIGITAL" },
       {
         property: "og:description",
         content: "Знакомьтесь с командой, которая будет работать над вашим проектом.",
@@ -24,39 +30,47 @@ type Member = {
   name: string;
   role: string;
   bio: string;
+  imageUrl: string;
 };
 
 const TEAM: Member[] = [
   {
-    name: "Арман Бекенов",
+    name: "Павел Пимурзин",
     role: "Founder · Head of Marketing",
     bio: "10+ лет в performance-маркетинге. Стратегия и управление проектами.",
+    imageUrl: pavelImg,
   },
   {
-    name: "Дана Ахметова",
-    role: "Art Director · UX/UI",
-    bio: "Дизайнер с продуктовым бэкграундом. Лендинги, сайты, дизайн-системы.",
+    name: "Бахыт Умбеталиев",
+    role: "CO-Founder · Head of Product & Creative",
+    bio: "12+ лет в рекламе и маркетинге",
+    imageUrl: bakhytImg,
   },
   {
-    name: "Ержан Сатпаев",
-    role: "Lead Developer",
-    bio: "Frontend-разработчик. React, TypeScript, архитектура и интеграции.",
+    name: "Акпар Арын",
+    role: "Digital Strategist",
+    bio: "Digital-стратег. Аналитика, оптимизация, масштабирование.",
+    imageUrl: akparImg,
   },
   {
-    name: "Айгерим Касенова",
-    role: "Performance Marketer",
-    bio: "Google, Meta, TikTok. Юнит-экономика и масштабирование кампаний.",
+    name: "Алина Абилева",
+    role: "PR Manager",
+    bio: "PR-специалист. Коммуникация и бренд-стратегия.",
+    imageUrl: alinaImg,
   },
   {
-    name: "Алишер Турганов",
+    name: "Мария Пономаренко",
+    role: "Designer",
+    bio: "Дизайнер с опытом в рекламе и брендинге. Креативные концепции и визуалы.",
+    imageUrl: mayaImg,
+  },
+  {
+    name: "Кирилл Эпов",
     role: "Video Producer",
     bio: "Сценарист и режиссёр. Reels, рекламные ролики, имиджевое видео.",
+    imageUrl: kirillImg,
   },
-  {
-    name: "Сабина Жумабаева",
-    role: "Project Manager",
-    bio: "Сопровождение клиентов. Сроки, коммуникация, отчётность.",
-  },
+  
 ];
 
 function TeamPage() {
@@ -86,11 +100,17 @@ function TeamPage() {
           <div className="grid gap-px overflow-hidden rounded-2xl border border-hairline bg-hairline md:grid-cols-2 lg:grid-cols-3">
             {TEAM.map((m) => (
               <article key={m.name} className="flex flex-col bg-background p-8">
-                <div className="aspect-[4/5] w-full overflow-hidden rounded-xl border border-dashed border-foreground/20 bg-secondary/40 flex items-center justify-center">
-                  <span className="text-[10px] font-mono uppercase tracking-widest text-muted-foreground">
-                    Фото
-                  </span>
+                
+                {/* Обновленный блок с изображением */}
+                <div className="aspect-[4/5] w-full overflow-hidden rounded-xl border border-hairline bg-secondary/40">
+                  <img 
+                    src={m.imageUrl} 
+                    alt={`Фотография: ${m.name}`} 
+                    className="h-full w-full object-cover transition-transform duration-500 hover:scale-105" 
+                    loading="lazy"
+                  />
                 </div>
+
                 <h2 className="mt-6 font-display text-2xl font-medium tracking-tight">{m.name}</h2>
                 <div className="mt-1 font-mono text-xs uppercase tracking-widest text-accent">{m.role}</div>
                 <p className="mt-4 text-sm text-muted-foreground">{m.bio}</p>

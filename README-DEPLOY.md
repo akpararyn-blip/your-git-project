@@ -1,4 +1,4 @@
-# ARYN TEAM — деплой на shared-хостинг
+# ABP DIGITAL — деплой на shared-хостинг
 
 Сайт собирается в обычные статические файлы (HTML/CSS/JS) и работает на любом хостинге с Apache (cPanel, ISPmanager, FastVPS, Beget, Hoster.kz и т.п.). Серверная часть — один PHP-файл `send-lead.php`, который пересылает заявки в Telegram.
 

@@ -5,13 +5,13 @@ import { SERVICES } from "@/lib/services-data";
 export const Route = createFileRoute("/services/yandex-ads")({
   head: () => ({
     meta: [
-      { title: "Реклама в Яндекс Директ — поиск, РСЯ, Мастер кампаний | ARYN TEAM" },
+      { title: "Реклама в Яндекс Директ — поиск, РСЯ, Мастер кампаний | ABP DIGITAL" },
       {
         name: "description",
         content:
           "Запуск и ведение Яндекс Директ: поиск, РСЯ, Мастер кампаний, ретаргетинг. Метрика, цели, сквозная аналитика. От 75 000 тг/мес.",
       },
-      { property: "og:title", content: "Реклама в Яндекс Директ — ARYN TEAM" },
+      { property: "og:title", content: "Реклама в Яндекс Директ — ABP DIGITAL" },
       { property: "og:description", content: "Поиск, РСЯ, Мастер кампаний и ретаргетинг для рынка СНГ." },
     ],
   }),

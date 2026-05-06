@@ -81,7 +81,7 @@ export const SERVICES: ServiceItem[] = [
       },
     ],
     meta: {
-      title: "Комплексный маркетинг под ключ — ARYN TEAM",
+      title: "Комплексный маркетинг под ключ — ABP DIGITAL",
       description:
         "Полноценный отдел маркетинга: стратегия, реклама во всех каналах, аналитика и креативы. Один подрядчик — один результат.",
     },
@@ -120,7 +120,7 @@ export const SERVICES: ServiceItem[] = [
       },
     ],
     meta: {
-      title: "Реклама в Google Ads — настройка и ведение | ARYN TEAM",
+      title: "Реклама в Google Ads — настройка и ведение | ABP DIGITAL",
       description:
         "Настройка и ведение рекламы в Google Ads: поиск, КМС, Performance Max, YouTube. От 100 000 тг/мес.",
     },
@@ -159,7 +159,7 @@ export const SERVICES: ServiceItem[] = [
       },
     ],
     meta: {
-      title: "Таргетированная реклама в Instagram — ARYN TEAM",
+      title: "Таргетированная реклама в Instagram — ABP DIGITAL",
       description:
         "Таргет в Instagram: Reels, Stories, лента. Продающие креативы и точные аудитории. От 75 000 тг/мес.",
     },
@@ -198,7 +198,7 @@ export const SERVICES: ServiceItem[] = [
       },
     ],
     meta: {
-      title: "Реклама в TikTok Ads — настройка и ведение | ARYN TEAM",
+      title: "Реклама в TikTok Ads — настройка и ведение | ABP DIGITAL",
       description:
         "Таргет в TikTok с нативными UGC-роликами. Тесты, Spark Ads, масштабирование. От 75 000 тг/мес.",
     },
@@ -237,7 +237,7 @@ export const SERVICES: ServiceItem[] = [
       },
     ],
     meta: {
-      title: "Реклама в Яндекс Директ — настройка и ведение | ARYN TEAM",
+      title: "Реклама в Яндекс Директ — настройка и ведение | ABP DIGITAL",
       description:
         "Яндекс Директ: поиск, РСЯ, ретаргетинг. Настройка Метрики и целей. От 75 000 тг/мес.",
     },
@@ -276,7 +276,7 @@ export const SERVICES: ServiceItem[] = [
       },
     ],
     meta: {
-      title: "SEO-оптимизация сайта — ARYN TEAM",
+      title: "SEO-оптимизация сайта — ABP DIGITAL",
       description:
         "Комплексное SEO: техаудит, контент, линкбилдинг, E-E-A-T. Растём по трафику и заявкам. От 200 000 тг/мес.",
     },
@@ -315,7 +315,7 @@ export const SERVICES: ServiceItem[] = [
       },
     ],
     meta: {
-      title: "Сквозная аналитика — настройка GA4, Метрики, дашбордов | ARYN TEAM",
+      title: "Сквозная аналитика — настройка GA4, Метрики, дашбордов | ABP DIGITAL",
       description:
         "Сквозная аналитика: GA4, Метрика, server-side, интеграция с CRM, дашборды Looker Studio. От 200 000 тг.",
     },
@@ -354,7 +354,7 @@ export const SERVICES: ServiceItem[] = [
       },
     ],
     meta: {
-      title: "Аудит рекламных кампаний — ARYN TEAM",
+      title: "Аудит рекламных кампаний — ABP DIGITAL",
       description:
         "Глубокий аудит Google, Instagram, TikTok, Яндекс за 5 дней. PDF-отчёт и план действий. 50 000 тг.",
     },
@@ -393,7 +393,7 @@ export const SERVICES: ServiceItem[] = [
       },
     ],
     meta: {
-      title: "Ведение социальных сетей (SMM) — ARYN TEAM",
+      title: "Ведение социальных сетей (SMM) — ABP DIGITAL",
       description:
         "SMM под ключ: стратегия, контент-план, съёмки Reels, публикации, комьюнити. От 150 000 тг/мес.",
     },
@@ -432,7 +432,7 @@ export const SERVICES: ServiceItem[] = [
       },
     ],
     meta: {
-      title: "Создание видеоконтента — съёмка и монтаж | ARYN TEAM",
+      title: "Создание видеоконтента — съёмка и монтаж | ABP DIGITAL",
       description:
         "Снимаем рекламные, имиджевые и обучающие ролики. Reels, YouTube, мероприятия. От 30 000 тг за ролик.",
     },
@@ -470,7 +470,7 @@ export const SERVICES: ServiceItem[] = [
       },
     ],
     meta: {
-      title: "UX/UI дизайн web-приложений — ARYN TEAM",
+      title: "UX/UI дизайн web-приложений — ABP DIGITAL",
       description:
         "UX-исследование, проектирование, UI и ТЗ для сложных web-приложений и SaaS. Работаем с продуктом.",
     },
@@ -502,7 +502,7 @@ export const SERVICES: ServiceItem[] = [
       { q: "На чём делаете сайты?", a: "React + TypeScript + Tailwind. Современный стек, который удобно поддерживать и развивать." },
     ],
     meta: {
-      title: "Разработка сайтов под бизнес-задачи — ARYN TEAM",
+      title: "Разработка сайтов под бизнес-задачи — ABP DIGITAL",
       description:
         "Разработка сайтов на React/TypeScript: дизайн, вёрстка, базовое SEO, аналитика. От 100 000 тг.",
     },
@@ -534,7 +534,7 @@ export const SERVICES: ServiceItem[] = [
       { q: "Можете сопровождать разработку?", a: "Да, выступаем product-менеджером на стороне заказчика и контролируем соответствие ТЗ." },
     ],
     meta: {
-      title: "Разработка технического задания для сложных проектов — ARYN TEAM",
+      title: "Разработка технического задания для сложных проектов — ABP DIGITAL",
       description:
         "ТЗ для разработчиков: Discovery, UX/UI, архитектура, оценка. Полная документация по проекту. От 200 000 тг.",
     },

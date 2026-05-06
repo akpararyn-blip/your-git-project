@@ -5,13 +5,13 @@ import { SERVICES } from "@/lib/services-data";
 export const Route = createFileRoute("/services/audit")({
   head: () => ({
     meta: [
-      { title: "Аудит рекламы — Google, Meta, TikTok, Яндекс за 5 дней | ARYN TEAM" },
+      { title: "Аудит рекламы — Google, Meta, TikTok, Яндекс за 5 дней | ABP DIGITAL" },
       {
         name: "description",
         content:
           "Глубокий аудит рекламных кабинетов за 5 рабочих дней: 80+ пунктов проверки, PDF-отчёт и часовая встреча с разбором. 50 000 тг.",
       },
-      { property: "og:title", content: "Аудит рекламы за 5 дней — ARYN TEAM" },
+      { property: "og:title", content: "Аудит рекламы за 5 дней — ABP DIGITAL" },
       { property: "og:description", content: "Найдём, где сливается бюджет, и дадим план действий на 30 дней." },
     ],
   }),

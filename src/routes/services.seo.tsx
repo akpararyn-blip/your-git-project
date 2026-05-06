@@ -5,13 +5,13 @@ import { SERVICES } from "@/lib/services-data";
 export const Route = createFileRoute("/services/seo")({
   head: () => ({
     meta: [
-      { title: "SEO-продвижение сайта — техаудит, контент, ссылки | ARYN TEAM" },
+      { title: "SEO-продвижение сайта — техаудит, контент, ссылки | ABP DIGITAL" },
       {
         name: "description",
         content:
           "Комплексное SEO под Google и Яндекс: технический аудит, Core Web Vitals, контент-стратегия, линкбилдинг, E-E-A-T. Считаем трафик и заявки. От 200 000 тг/мес.",
       },
-      { property: "og:title", content: "SEO-оптимизация сайта — ARYN TEAM" },
+      { property: "og:title", content: "SEO-оптимизация сайта — ABP DIGITAL" },
       { property: "og:description", content: "Системный органический рост. Не позиции — трафик и продажи." },
     ],
   }),

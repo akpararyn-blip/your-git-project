@@ -5,13 +5,13 @@ import { SERVICES } from "@/lib/services-data";
 export const Route = createFileRoute("/services/ux-ui")({
   head: () => ({
     meta: [
-      { title: "UX/UI дизайн web-приложений и SaaS — ARYN TEAM" },
+      { title: "UX/UI дизайн web-приложений и SaaS — ABP DIGITAL" },
       {
         name: "description",
         content:
           "UX-исследование, информационная архитектура, прототипы, UI и дизайн-система для сложных web-приложений и SaaS. Не лендинги — продукты.",
       },
-      { property: "og:title", content: "UX/UI дизайн сложных интерфейсов — ARYN TEAM" },
+      { property: "og:title", content: "UX/UI дизайн сложных интерфейсов — ABP DIGITAL" },
       { property: "og:description", content: "Discovery, IA, прототип, UI-кит и ТЗ для разработчиков." },
     ],
   }),

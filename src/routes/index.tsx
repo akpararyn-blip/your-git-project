@@ -9,19 +9,20 @@ import partnerHyundai from "@/assets/partners/hyundai.png";
 import partnerByd from "@/assets/partners/byd.png";
 import partnerToyota from "@/assets/partners/toyota.png";
 import partnerSubaru from "@/assets/partners/subaru.png";
+import heroPhoto from "@/assets/hero.png";
 
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "ARYN TEAM — Performance-маркетинг под ключ в Алматы" },
+      { title: "ABP DIGITAL — Performance-маркетинг под ключ в Алматы" },
       {
         name: "description",
         content:
-          "ARYN TEAM — комплексный performance-маркетинг: реклама в Google, Instagram, TikTok и Яндекс, аналитика, SEO и видеоконтент. Прозрачно, под выручку.",
+          "ABP DIGITAL — комплексный performance-маркетинг: реклама в Google, Instagram, TikTok и Яндекс, аналитика, SEO и видеоконтент. Прозрачно, под выручку.",
       },
       {
         property: "og:title",
-        content: "ARYN TEAM — Performance-маркетинг под ключ в Алматы",
+        content: "ABP DIGITAL — Performance-маркетинг под ключ в Алматы",
       },
       {
         property: "og:description",
@@ -88,7 +89,7 @@ function HomePage() {
         <div className="mx-auto max-w-7xl px-6 pb-20 pt-16 lg:px-10 lg:pt-24">
           <div className="flex items-center gap-3 text-xs font-mono uppercase tracking-widest text-muted-foreground">
             <span className="h-px w-8 bg-foreground/40" />
-            ARYN TEAM · Almaty · Performance Marketing
+            ABP DIGITAL · Kazakhstan · Performance Marketing
           </div>
 
           <div className="mt-10 grid items-center gap-12 lg:grid-cols-[1.2fr_1fr] lg:gap-16">
@@ -100,7 +101,7 @@ function HomePage() {
               </h1>
 
               <p className="mt-8 max-w-xl text-lg text-muted-foreground md:text-xl">
-                ARYN TEAM — комплексный маркетинг под ключ в Алматы. Реклама во всех каналах,
+                ABP DIGITAL — комплексный маркетинг под ключ в Алматы. Реклама во всех каналах,
                 сквозная аналитика и оригинальный контент — одна команда вместо пяти подрядчиков.
               </p>
 
@@ -130,19 +131,14 @@ function HomePage() {
             {/* Right: specialist photo placeholder */}
             <div className="relative">
               <div className="relative aspect-[4/5] overflow-hidden rounded-3xl border border-hairline bg-secondary">
-                {/* Placeholder until photo is uploaded */}
-                <div className="absolute inset-0 flex items-end justify-center bg-gradient-to-b from-transparent via-transparent to-foreground/5">
-                  <div className="flex h-full w-full flex-col items-center justify-center gap-3 text-muted-foreground">
-                    <span className="font-mono text-xs uppercase tracking-widest">
-                      Фото специалиста
-                    </span>
-                    <span className="font-display text-6xl font-medium tracking-tight text-foreground/10">
-                      ARYN
-                    </span>
-                  </div>
-                </div>
+                <img 
+                  src={heroPhoto} 
+                  alt="ABP DIGITAL" 
+                  className="absolute inset-0 h-full w-full object-cover"
+                  loading="eager" // Эту картинку грузим сразу, т.к. она в первом экране
+                />
                 <span className="absolute left-4 top-4 rounded-full bg-background/90 px-3 py-1 text-xs font-mono uppercase tracking-widest backdrop-blur">
-                  Founder
+                  Комплексный подход
                 </span>
                 <span className="absolute bottom-4 right-4 rounded-full bg-accent px-3 py-1 text-xs font-medium text-accent-foreground">
                   10+ лет в индустрии

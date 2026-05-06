@@ -7,13 +7,13 @@ const service = getServiceBySlug("google-ads")!;
 export const Route = createFileRoute("/services/google-ads")({
   head: () => ({
     meta: [
-      { title: "Реклама в Google Ads — поиск, КМС, YouTube, Performance Max | ARYN TEAM" },
+      { title: "Реклама в Google Ads — поиск, КМС, YouTube, Performance Max | ABP DIGITAL" },
       {
         name: "description",
         content:
           "Запуск и ведение Google Ads под ключ: семантика, поиск, КМС, Performance Max, YouTube. Прозрачные отчёты по заявкам и ROAS. От 100 000 тг/мес.",
       },
-      { property: "og:title", content: "Реклама в Google Ads под ключ — ARYN TEAM" },
+      { property: "og:title", content: "Реклама в Google Ads под ключ — ABP DIGITAL" },
       {
         property: "og:description",
         content:

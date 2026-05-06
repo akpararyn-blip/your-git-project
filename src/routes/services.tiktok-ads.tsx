@@ -5,13 +5,13 @@ import { SERVICES } from "@/lib/services-data";
 export const Route = createFileRoute("/services/tiktok-ads")({
   head: () => ({
     meta: [
-      { title: "Реклама в TikTok Ads — нативный таргет, UGC и Spark Ads | ARYN TEAM" },
+      { title: "Реклама в TikTok Ads — нативный таргет, UGC и Spark Ads | ABP DIGITAL" },
       {
         name: "description",
         content:
           "Запуск рекламы в TikTok: UGC-ролики в нативном стиле, Spark Ads, тесты гипотез и масштабирование выигрышных связок. От 75 000 тг/мес.",
       },
-      { property: "og:title", content: "Реклама в TikTok под ключ — ARYN TEAM" },
+      { property: "og:title", content: "Реклама в TikTok под ключ — ABP DIGITAL" },
       { property: "og:description", content: "Нативный контент, который не пропускают. Тесты, Spark Ads, скейл." },
     ],
   }),

@@ -5,13 +5,13 @@ import { SERVICES } from "@/lib/services-data";
 export const Route = createFileRoute("/services/video")({
   head: () => ({
     meta: [
-      { title: "Видеопродакшн — рекламные ролики, Reels, имиджевое видео | ARYN TEAM" },
+      { title: "Видеопродакшн — рекламные ролики, Reels, имиджевое видео | ABP DIGITAL" },
       {
         name: "description",
         content:
           "Снимаем рекламные ролики, Reels, имиджевое и обучающее видео. Сценарий, съёмка, монтаж, цвет, графика — под ключ. От 30 000 тг за ролик.",
       },
-      { property: "og:title", content: "Создание видеоконтента — ARYN TEAM" },
+      { property: "og:title", content: "Создание видеоконтента — ABP DIGITAL" },
       { property: "og:description", content: "Reels, рекламные ролики, имиджевое и продуктовое видео под ключ." },
     ],
   }),
