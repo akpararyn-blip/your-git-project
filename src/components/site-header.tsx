@@ -13,6 +13,7 @@ import {
   DropdownMenu,
   DropdownMenuTrigger,
   DropdownMenuContent,
+  DropdownMenuItem,
 } from "@/components/ui/dropdown-menu";
 import { SERVICES, SERVICE_CATEGORIES, getServicesByCategory } from "@/lib/services-data";
 import logo from "@/assets/aryn-logo.png";
@@ -75,17 +76,19 @@ export function SiteHeader() {
                       <ul className="space-y-1">
                         {items.map((s) => (
                           <li key={s.slug}>
-                            <Link
-                              to={`/services/${s.slug}`}
-                              className="group flex items-baseline justify-between gap-3 rounded-lg px-2 py-2 transition-colors hover:bg-secondary"
-                            >
-                              <span className="font-display text-base font-medium tracking-tight text-foreground">
-                                {s.title}
-                              </span>
-                              <span className="text-xs font-mono text-muted-foreground">
-                                {s.price}
-                              </span>
-                            </Link>
+                            <DropdownMenuItem asChild>
+                              <Link
+                                to={`/services/${s.slug}`}
+                                className="group flex items-baseline justify-between gap-3 rounded-lg px-2 py-2 transition-colors hover:bg-secondary cursor-pointer"
+                              >
+                                <span className="font-display text-base font-medium tracking-tight text-foreground">
+                                  {s.title}
+                                </span>
+                                <span className="text-xs font-mono text-muted-foreground">
+                                  {s.price}
+                                </span>
+                              </Link>
+                            </DropdownMenuItem>
                           </li>
                         ))}
                       </ul>
