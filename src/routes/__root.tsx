@@ -34,7 +34,7 @@ export const Route = createRootRoute({
       {
         name: "description",
         content:
-          "ABP DIGITAL — агентство performance-маркетинга и видеопродакшена в Алматы. Прозрачная аналитика, измеримый рост.",
+          "ABP DIGITAL — агентство performance-маркетинга и видеопродакшена в Казахстане. Прозрачная аналитика, измеримый рост.",
       },
     ],
   }),

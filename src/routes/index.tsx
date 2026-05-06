@@ -14,7 +14,7 @@ import heroPhoto from "@/assets/hero.png";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "ABP DIGITAL — Performance-маркетинг под ключ в Алматы" },
+      { title: "ABP DIGITAL — Performance-маркетинг под ключ в Казахстане" },
       {
         name: "description",
         content:
@@ -22,7 +22,7 @@ export const Route = createFileRoute("/")({
       },
       {
         property: "og:title",
-        content: "ABP DIGITAL — Performance-маркетинг под ключ в Алматы",
+        content: "ABP DIGITAL — Performance-маркетинг под ключ в Казахстане",
       },
       {
         property: "og:description",
@@ -101,7 +101,7 @@ function HomePage() {
               </h1>
 
               <p className="mt-8 max-w-xl text-lg text-muted-foreground md:text-xl">
-                ABP DIGITAL — комплексный маркетинг под ключ в Алматы. Реклама во всех каналах,
+                ABP DIGITAL — комплексный маркетинг под ключ в Казахстане. Реклама во всех каналах,
                 сквозная аналитика и оригинальный контент — одна команда вместо пяти подрядчиков.
               </p>
 
